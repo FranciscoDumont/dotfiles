@@ -1,0 +1,13 @@
+# Ignore files not tracked by Git
+*
+
+# Files currently being tracked by Git and contained in this repo
+!.config/*
+!.i3/*
+.i3/scripts-i3blocks/*
+
+!.fonts/
+!.bashrc
+!.gitignore
+
+!README.md
