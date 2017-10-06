@@ -5,6 +5,7 @@
 !.config/*
 !.i3/*
 .i3/scripts-i3blocks/*
+.i3/i3blocks
 
 !.fonts/
 !.bashrc

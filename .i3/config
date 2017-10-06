@@ -157,9 +157,11 @@ assign [class="libreoffice"] $workspace10
 for_window [class="Spotify"] move to workspace $workspace4
 for_window [class="discord"] move to workspace $workspace5
 for_window [class="XTerm"] floating enable, resize set 640 480, move absolute position center, border none
+for_window [class="feh"] floating enable, move position mouse, border none
+floating_maximum_size 640 x 480 
 
 
-exec_always compton -f 
+exec_always compton -f
  
 #background             alpha.wallhaven.cc/
 exec_always --no-startup-id feh --bg-fill $HOME/.i3/wallpaper.jpg
@@ -232,10 +234,10 @@ set $pink       #DA496A
 # finds out, if available)
 bar {
     id bar-0
+    #tray_output none 
     position bottom
     status_command i3blocks -c $HOME/.i3/i3blocks.conf
     strip_workspace_numbers yes
-    tray_output primary #none #primary
 
     colors {
         background $dark
