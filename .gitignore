@@ -10,5 +10,6 @@
 !.fonts/
 !.bashrc
 !.gitignore
+!.profile
 
 !README.md
