@@ -166,6 +166,7 @@ for_window [class="discord"] move to workspace $workspace5
 for_window [class="XTerm"] floating enable, resize set 640 480, move absolute position center, border none
 for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none 
 for_window [class="TelegramDesktop"] move to workspace $workspace5, border none
+for_window [class="Tilda"] floating enable
 #floating_maximum_size 768 x 576 
 
 exec caffeine-indicator
@@ -241,6 +242,9 @@ set $cyan       #2AA198
 set $yellow     #E1C61A
 set $pink       #DA496A
 
+set $bg #0a162b
+set $fg #cf702f
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
@@ -251,24 +255,24 @@ bar {
     strip_workspace_numbers yes
 
     colors {
-        background $dark
+        background $bg
         statusline $white
         separator  $gray
 
-    # workspace indicators border       backgr  text
-        focused_workspace  $dark       $dark    $blue
-        active_workspace   $white      $dark    $dark   #no se que es
-        inactive_workspace $dark       $dark    $white  #esto tampoco
-        urgent_workspace   $pink       $pink    $black
+    # workspace indicators border       backgr          text
+        focused_workspace  $bg          $bg             $fg
+        active_workspace   $white       $dark           $dark   #no se que es
+        inactive_workspace $bg          $bg             $white  #esto tampoco
+        urgent_workspace   $fg          $fg             $bg
     }
 }
 
 # config colors
-#class                  border  backgr.   text    indicator
-client.focused          $dark   $darkblue $white   $pink
-client.unfocused        $dark   $dark     $white   $pink
-client.focused_inactive $dark   $dark     $white   $pink
-client.urgent           $pink   $pink     $dark    $dark
+#class                  border  backgr. text    indicator
+client.focused          #1f324e #1f324e $white   $pink
+client.unfocused        $bg     $bg     $white   $pink
+client.focused_inactive $dark   $bg     $white   $pink
+client.urgent           $fg     $fg     $bg    $dark
 
 
 
