@@ -280,7 +280,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Borders
-new_window normal
+new_window pixel 1
 
 hide_edge_borders vertical
 
