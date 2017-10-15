@@ -138,10 +138,17 @@ bindsym Control+Mod1+Shift+Left      exec "i3-msg move container to workspace pr
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
  
+#bindsym
+
 bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
-bindsym $mod+m exec nautilus --no-desktop #$mod+m => nautilus
-bindsym Print exec gnome-screenshot -i #imprimir pantalla
-for_window [class="Gnome-screenshot"] border none
+bindsym Control+Mod1+f exec firefox #Ctrl+Alt+S => Firefox
+bindsym $mod+m exec thunar #$mod+m => thunar
+bindsym Print exec --no-startup-id gnome-screenshot -i #imprimir pantalla
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 
 #i3lock
