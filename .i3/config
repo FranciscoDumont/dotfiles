@@ -164,9 +164,13 @@ assign [class="libreoffice"] $workspace10
 for_window [class="Spotify"] move to workspace $workspace4
 for_window [class="discord"] move to workspace $workspace5
 for_window [class="XTerm"] floating enable, resize set 640 480, move absolute position center, border none
-for_window [class="feh"] floating enable, move position mouse, border none
-floating_maximum_size 640 x 480 
+for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none 
+for_window [class="TelegramDesktop"] move to workspace $workspace5, border none
+#floating_maximum_size 768 x 576 
 
+exec caffeine-indicator
+exec firefox
+exec --no-startup-id dropbox start
 
 exec_always compton -f
  
