@@ -20,8 +20,8 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
 #font pango:DejaVu Sans Mono 10
-font pango:System San Francisco Display 9.5
-#Link https://github.com/supermarin/YosemiteSanFranciscoFont
+#font pango: SFNS Display 10
+font pango:Overpass Regular 10
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -150,6 +150,9 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+# Terminal scratchpad
+exec gnome-terminal --hide-menubar --role scratchpad
+for_window [class="Gnome-terminal" window_role="scratchpad"] move scratchpad
 
 #i3lock
 #https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
@@ -262,7 +265,7 @@ bar {
     # workspace indicators border       backgr          text
         focused_workspace  $bg          $bg             $fg
         active_workspace   $white       $dark           $dark   #no se que es
-        inactive_workspace $bg          $bg             $white  #esto tampoco
+        inactive_workspace $bg          $bg             $white  
         urgent_workspace   $fg          $fg             $bg
     }
 }
@@ -278,7 +281,7 @@ client.urgent           $fg     $fg     $bg    $dark
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -5% #decrease sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls

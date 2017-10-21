@@ -20,3 +20,8 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$PATH:$HOME/bin"
 fi
+
+#Para que me ande el gnome-control-center
+if [ $XDG_CURRENT_DESKTOP="i3" ]; then
+  XDG_CURRENT_DESKTOP="Unity"
+ fi
