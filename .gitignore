@@ -7,7 +7,7 @@
 .i3/scripts-i3blocks/*
 .i3/i3blocks
 
-!.fonts/
+!.fonts/*
 !.bashrc
 !.gitignore
 !.profile
