@@ -154,9 +154,6 @@ bindsym $mod+minus scratchpad show
 exec gnome-terminal --hide-menubar --role scratchpad
 for_window [class="Gnome-terminal" window_role="scratchpad"] move scratchpad
 
-#i3lock
-#https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
-bindsym $mod+l exec "/home/panchi/.i3/lock.sh /home/panchi/.i3/lock.png"
 
 assign [class="Firefox"] $workspace1
 for_window [class="Firefox"] border none
@@ -172,7 +169,6 @@ for_window [class="TelegramDesktop"] move to workspace $workspace5, border none
 for_window [class="Tilda"] floating enable
 #floating_maximum_size 768 x 576 
 
-exec caffeine-indicator
 exec firefox
 exec --no-startup-id dropbox start
 
@@ -291,11 +287,22 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
+exec xinput --set-prop 13 "Synaptics Two-Finger Scrolling" 1 1 #Enable touchpad horizontal scrolling
+
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Setup the lock screen
+#exec --no-startup-id xset s noblank
+#exec --no-startup-id xset dpms 130 130 240
+exec --no-startup-id xset s off
+exec --no-startup-id xautolock -time 5 -locker "~/.i3/lock.sh ~/.i3/lock.png"
+
+bindsym $mod+l exec "~/.i3/lock.sh ~/.i3/lock.png"
+#https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
 
 # Borders
 new_window pixel 1
