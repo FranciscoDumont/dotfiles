@@ -113,7 +113,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias agenda='libreoffice /home/panchi/Documentos/Agenda.ods & disown &&exit'
-
+alias agenda='libreoffice ~/Documentos/Agenda.ods & disown &&exit'
 alias top="vtop"
 alias oldtop="/usr/bin/top"
+alias yt2mp3="youtube-dl --extract-audio --audio-format mp3"
