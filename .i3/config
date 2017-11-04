@@ -37,7 +37,7 @@ bindsym $mod+Shift+Return exec xterm -e ranger $HOME/Imágenes/Wallpapers
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -143,7 +143,9 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
 bindsym Control+Mod1+f exec firefox #Ctrl+Alt+S => Firefox
 bindsym $mod+m exec thunar #$mod+m => thunar
+bindsym $mod+Shift+m exec nautilus --no-desktop #$mod+Shift+m => nautilus
 bindsym Print exec --no-startup-id gnome-screenshot -i #imprimir pantalla
+
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -151,12 +153,13 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Terminal scratchpad
-exec gnome-terminal --hide-menubar --role scratchpad
+exec --no-startup-id gnome-terminal --hide-menubar --role scratchpad
 for_window [class="Gnome-terminal" window_role="scratchpad"] move scratchpad
 
 
 assign [class="Firefox"] $workspace1
 for_window [class="Firefox"] border none
+assign [class="Google-chrome"] $workspace5
 assign [class="Libreoffice"] $workspace2
 assign [class="Sublime_text"] $workspace3
 assign [class="GitKraken"] $workspace3
@@ -169,10 +172,10 @@ for_window [class="TelegramDesktop"] move to workspace $workspace5, border none
 for_window [class="Tilda"] floating enable
 #floating_maximum_size 768 x 576 
 
-exec firefox
+exec --no-startup-id firefox
 exec --no-startup-id dropbox start
 
-exec_always compton -f
+exec_always --no-startup-id compton -f
  
 #background             alpha.wallhaven.cc/
 exec_always --no-startup-id feh --bg-fill $HOME/.i3/wallpaper.jpg
@@ -287,7 +290,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
-exec xinput --set-prop 13 "Synaptics Two-Finger Scrolling" 1 1 #Enable touchpad horizontal scrolling
+exec --no-startup-id xinput --set-prop 13 "Synaptics Two-Finger Scrolling" 1 1 #Enable touchpad horizontal scrolling
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
