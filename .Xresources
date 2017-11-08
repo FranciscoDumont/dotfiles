@@ -1,0 +1,34 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+
+rofi.font: SFNS Display Regular 15
+rofi.hide-scrollbar: true
+rofi.bw: 3
+rofi.columns: 1
+rofi.padding: 5
+rofi.sidebar-mode: true
+
+rofi.yoffset: 0 
+rofi.location: 0
+rofi.width: 50
+rofi.lines: 15
+rofi.fixed-num-lines: true
+rofi.opacity: 100
+rofi.fullscreen: false
+
+!rofi colors
+#define bg #223344
+#define fg #cc5544
+#define hlbg #cc5544
+#define hlfg #eeccaa
+
+rofi.color-enabled: true
+
+! State:           'bg',   	'fg',    'bgalt',  'hlbg',  'hlfg'
+rofi.color-normal: bg,  	fg,	 	bg,     	hlbg, 	hlfg
+rofi.color-urgent: bg, 		fg, 	bg,     	hlbg, 	hlfg
+rofi.color-active: bg,		fg,		bg,		 	hlbg, 	hlfg
+
+!                  'background',	'border',	'separator'
+rofi.color-window:  bg,				 bg,		 hlfg
