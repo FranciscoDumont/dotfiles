@@ -145,7 +145,8 @@ bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
 bindsym Control+Mod1+f exec firefox #Ctrl+Alt+S => Firefox
 bindsym $mod+m exec thunar #$mod+m => thunar
 bindsym $mod+Shift+m exec nautilus --no-desktop #$mod+Shift+m => nautilus
-bindsym Print exec --no-startup-id gnome-screenshot -i #imprimir pantalla
+bindsym Print exec --no-startup-id gnome-screenshot #imprimir pantalla
+bindsym Shift+Print exec --no-startup-id gnome-screenshot --interactive #Interactively set options in a dialog.
 
 
 # Make the currently focused window a scratchpad
@@ -310,10 +311,10 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Setup the lock screen
 #exec --no-startup-id xset s noblank
-#exec --no-startup-id xset dpms 130 130 240
+exec --no-startup-id xset dpms 1500 1500 1800
 exec --no-startup-id xset s off
 exec --no-startup-id xautolock -time 30 -locker "~/.i3/lock.sh ~/.i3/lock.png"
-exec --no-startup-id xset -dpms
+#exec --no-startup-id xset -dpms
 
 bindsym $mod+l exec "~/.i3/lock.sh ~/.i3/lock.png"
 #https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
