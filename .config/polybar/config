@@ -80,9 +80,6 @@ scroll-down = i3wm-wsprev
 
 bottom = true
 
-;override-redirect = true  				cuando saque i3bar opner esto
-;wm-restack = i3
-
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -167,7 +164,7 @@ label-focused = %icon%
 label-focused-foreground = ${colors.foreground}
 label-focused-background = #333333
 label-focused-underline = ${colors.primary}
-label-focused-padding = 2
+label-focused-padding = 3
 label-focused-font = 2
 
 ; Available tokens:
@@ -176,7 +173,7 @@ label-focused-font = 2
 ;   %index%
 ; Default: %icon%  %name%
 label-unfocused = %icon%
-label-unfocused-padding = 2
+label-unfocused-padding = 3
 label-unfocused-font = 2
 
 ; Available tokens:
@@ -186,7 +183,7 @@ label-unfocused-font = 2
 ; Default: %icon%  %name%
 label-visible = %icon%
 label-visible-underline = #555555
-label-visible-padding = 2
+label-visible-padding = 3
 label-visible-font = 2
 
 ; Available tokens:
@@ -197,7 +194,7 @@ label-visible-font = 2
 label-urgent = %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
-label-urgent-padding = 2
+label-urgent-padding = 3
 label-urgent-font = 2
 
 
