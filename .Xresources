@@ -75,26 +75,31 @@ URxvt*font: xft:Source Code Pro:size=10
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 
-rofi.font: SFNS Display Regular 15
+rofi.modi: window,run,ssh,drun
+
+rofi.font: SFNS Display Regular 12
 rofi.hide-scrollbar: true
-rofi.bw: 3
-rofi.columns: 1
-rofi.padding: 5
+rofi.bw: 2 !border width
+rofi.columns: 3
+rofi.padding: 10
 rofi.sidebar-mode: true
+rofi.separator-style: solid
 
 rofi.yoffset: 0 
 rofi.location: 0
-rofi.width: 50
+rofi.width: 60
 rofi.lines: 15
 rofi.fixed-num-lines: true
 rofi.opacity: 100
 rofi.fullscreen: false
 
+rofi.show-icons: true
+
 !rofi colors
-#define bg #223344
-#define fg #cc5544
-#define hlbg #cc5544
-#define hlfg #eeccaa
+#define bg #2b303b
+#define fg #839496
+#define hlbg #8fa1b3
+#define hlfg #2b303b
 
 rofi.color-enabled: true
 
@@ -104,4 +109,4 @@ rofi.color-urgent: bg, 		fg, 	bg,     	hlbg, 	hlfg
 rofi.color-active: bg,		fg,		bg,		 	hlbg, 	hlfg
 
 !                  'background',	'border',	'separator'
-rofi.color-window:  bg,				 bg,		 hlfg
+rofi.color-window:  bg,				 fg,		 fg
