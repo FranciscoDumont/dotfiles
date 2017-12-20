@@ -12,7 +12,7 @@ background = #222
 background-alt = #444
 foreground = #dfdfdf
 foreground-alt = #55
-primary = #cc4455
+primary = #333
 secondary = #e60053
 alert = #bd2c40 
 
@@ -58,8 +58,8 @@ font-4 = FontAwesome:size=8;1
 ;font-5 = Termsynu:size=8:antialias=false;0
 
 modules-left = i3 xwindow
-modules-center = 
-modules-right = xbacklight volume music cpu date date2 powermenu
+modules-center = music
+modules-right = battery volume cpu date date2 powermenu
 
 tray-position = right
 tray-detached = false
@@ -387,11 +387,16 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = BAT0
+battery = BAT1
 adapter = ADP1
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+time-format = %H:%M
+
+label-discharging = Discharging %percentage%% %time%
+
+
+format-charging = <animation-charging> <label-charging> %time%
 format-charging-underline = #ffb52a
 
 format-discharging = <ramp-capacity> <label-discharging>
@@ -457,6 +462,9 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+;I've changed /etc/sudoers with $visudo adding:
+;<myUserName> ALL=(ALL)NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
 
 ; vim:ft=dosini
 

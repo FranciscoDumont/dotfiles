@@ -31,8 +31,6 @@ floating_modifier $mod
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec xterm -e ranger $HOME/Imágenes/Wallpapers
 
-
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -99,7 +97,7 @@ set $workspace2 2
 set $workspace3 3
 set $workspace4 4
 set $workspace5 5
-set $workspace6 6 
+set $workspace6 6
 set $workspace7 7
 set $workspace8 8
 set $workspace9 9
@@ -142,12 +140,17 @@ bindsym $mod+Tab workspace back_and_forth
 #bindsym
 
 bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
-bindsym Control+Mod1+f exec firefox #Ctrl+Alt+S => Firefox
 bindsym $mod+m exec thunar #$mod+m => thunar
 bindsym $mod+Shift+m exec nautilus --no-desktop #$mod+Shift+m => nautilus
 bindsym Print exec --no-startup-id gnome-screenshot #imprimir pantalla
 bindsym Shift+Print exec --no-startup-id gnome-screenshot --interactive #Interactively set options in a dialog.
 
+
+bindsym $mod+F1 exec --no-startup-id firefox
+bindsym $mod+F2 exec --no-startup-id agenda
+bindsym $mod+F3 exec --no-startup-id subl
+bindsym $mod+F4 exec --no-startup-id spotify
+bindsym $mod+F5 exec --no-startup-id google-chrome
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -162,6 +165,7 @@ for_window [class="Gnome-terminal" window_role="scratchpad"] move scratchpad
 assign [class="Firefox"] $workspace1
 for_window [class="Firefox"] border none
 assign [class="Google-chrome"] $workspace5
+for_window [class="Google-chrome"] border none
 assign [class="Libreoffice"] $workspace2
 assign [class="Sublime_text"] $workspace3
 assign [class="GitKraken"] $workspace3
@@ -177,7 +181,10 @@ for_window [class="Tilda"] floating enable
 exec --no-startup-id firefox
 exec --no-startup-id dropbox start
 
-exec_always --no-startup-id compton -f
+exec_always --no-startup-id compton -f -c -C
+
+# Neon
+#exec_always --no-startup-id compton -f -c --shadow-red 0.5 --shadow-green 0.1 --shadow-blue 0.4 -r 20
  
 #background             alpha.wallhaven.cc/
 exec_always --no-startup-id feh --bg-fill $HOME/.i3/wallpaper.jpg
