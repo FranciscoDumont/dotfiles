@@ -1,27 +1,16 @@
-# ~/.profile: executed by the command interpreter for login shells.
-# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
-# exists.
-# see /usr/share/doc/bash/examples/startup-files for examples.
-# the files are located in the bash-doc package.
+#
+# ~/.profile
+#
+#
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+[[ "$XDG_CURRENT_DESKTOP" == "KDE" ]] || export QT_QPA_PLATFORMTHEME="qt5ct"
+export EDITOR=/usr/bin/nano
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
+[[ -f ~/.extend.profile ]] && . ~/.extend.profile
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$PATH:$HOME/bin"
 fi
 
-#Para que me ande el gnome-control-center
-if [ $XDG_CURRENT_DESKTOP="i3" ]; then
-  XDG_CURRENT_DESKTOP="Unity"
- fi
+xrdb -merge $HOME/.Xresources

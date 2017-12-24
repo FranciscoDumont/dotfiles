@@ -29,7 +29,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec xterm -e ranger $HOME/Imágenes/Wallpapers
+bindsym $mod+Shift+Return exec xterm -e ranger $HOME/Pictures/Wallpapers
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -150,7 +150,8 @@ bindsym $mod+F1 exec --no-startup-id firefox
 bindsym $mod+F2 exec --no-startup-id agenda
 bindsym $mod+F3 exec --no-startup-id subl
 bindsym $mod+F4 exec --no-startup-id spotify
-bindsym $mod+F5 exec --no-startup-id google-chrome
+bindsym $mod+F5 exec --no-startup-id google-chrome-stable
+bindsym $mod+F6 exec --no-startup-id dosbox
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -176,18 +177,19 @@ for_window [class="XTerm"] floating enable, resize set 640 480, move absolute po
 for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none 
 for_window [class="TelegramDesktop"] move to workspace $workspace5, border none
 for_window [class="Tilda"] floating enable
+assign [class="dosbox"] $workspace6
 #floating_maximum_size 768 x 576 
 
 exec --no-startup-id firefox
 exec --no-startup-id dropbox start
 
-exec_always --no-startup-id compton -f -c -C
+exec_always --no-startup-id "compton --config ~/.config/compton.conf"
 
 # Neon
 #exec_always --no-startup-id compton -f -c --shadow-red 0.5 --shadow-green 0.1 --shadow-blue 0.4 -r 20
  
 #background             alpha.wallhaven.cc/
-exec_always --no-startup-id feh --bg-fill $HOME/.i3/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg
 #Other scaling options include:
 #--bg-tile FILE
 #--bg-center FILE
@@ -322,10 +324,10 @@ bindsym XF86AudioPrev exec playerctl previous
 #exec --no-startup-id xset s noblank
 exec --no-startup-id xset dpms 1500 1500 1800
 exec --no-startup-id xset s off
-exec --no-startup-id xautolock -time 30 -locker "~/.i3/lock.sh ~/.i3/lock.png"
+exec --no-startup-id xautolock -time 30 -locker "~/.config/i3/lock.sh ~/.i3/lock.png"
 #exec --no-startup-id xset -dpms
 
-bindsym $mod+l exec "~/.i3/lock.sh ~/.i3/lock.png"
+bindsym $mod+l exec "~/.config/i3/lock.sh ~/.config/i3/lock.png"
 #https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
 
 # Borders
@@ -334,3 +336,10 @@ new_window pixel 1
 hide_edge_borders vertical
 
 bindsym $mod+b border toggle
+
+
+# for_window [class="mpv"] floating enable,resize set 854 480,move absolute position center
+# bindsym 7 exec mpv --volume 200 ~/Music/soyVirgen.mp3
+# bindsym 8 exec mpv --start=03:15 ~/Videos/BS\ -\ 01\ -\ Anime-HD.com.mkv
+# bindsym 9 exec mpv --start=00:02 ~/Music/July3p\ -\ Te\ vas\ a\ morir\ virgo\ asi\ boludo.mp3
+# bindsym 0 exec killall mpv
