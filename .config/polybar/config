@@ -59,7 +59,7 @@ font-4 = FontAwesome:size=11;1
 
 modules-left = i3 xwindow
 modules-center = music
-modules-right = battery volume cpu date date2 powermenu
+modules-right = volume cpu date date2 powermenu
 
 tray-position = right
 tray-detached = false

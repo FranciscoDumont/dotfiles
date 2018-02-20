@@ -142,9 +142,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
 bindsym $mod+m exec thunar #$mod+m => thunar
 bindsym $mod+Shift+m exec nautilus --no-desktop #$mod+Shift+m => nautilus
-bindsym Print exec --no-startup-id gnome-screenshot #imprimir pantalla
-bindsym Shift+Print exec --no-startup-id gnome-screenshot --interactive #Interactively set options in a dialog.
-
+bindsym Print exec --no-startup-id xfce4-screenshooter #imprimir pantalla
 
 bindsym $mod+F1 exec --no-startup-id firefox
 bindsym $mod+F2 exec --no-startup-id agenda
@@ -182,6 +180,13 @@ assign [class="dosbox"] $workspace6
 
 exec --no-startup-id firefox
 exec --no-startup-id dropbox start
+exec --no-startup-id xfce4-clipman
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id nm-applet
+exec --no-startup-id numlockx on
+exec --no-startup-id caffeine #Caffeine-ng
+#exec --no-startup-id 
+
 
 exec_always --no-startup-id "compton --config ~/.config/compton.conf"
 
@@ -324,7 +329,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #exec --no-startup-id xset s noblank
 exec --no-startup-id xset dpms 1500 1500 1800
 exec --no-startup-id xset s off
-exec --no-startup-id xautolock -time 30 -locker "~/.config/i3/lock.sh ~/.i3/lock.png"
+exec --no-startup-id xautolock -time 30 -locker "~/.config/i3/lock.sh ~/.config/i3/lock.png"
 #exec --no-startup-id xset -dpms
 
 bindsym $mod+l exec "~/.config/i3/lock.sh ~/.config/i3/lock.png"
@@ -338,8 +343,4 @@ hide_edge_borders vertical
 bindsym $mod+b border toggle
 
 
-# for_window [class="mpv"] floating enable,resize set 854 480,move absolute position center
-# bindsym 7 exec mpv --volume 200 ~/Music/soyVirgen.mp3
-# bindsym 8 exec mpv --start=03:15 ~/Videos/BS\ -\ 01\ -\ Anime-HD.com.mkv
-# bindsym 9 exec mpv --start=00:02 ~/Music/July3p\ -\ Te\ vas\ a\ morir\ virgo\ asi\ boludo.mp3
-# bindsym 0 exec killall mpv
+for_window [class="mpv"] floating enable,resize set 854 480,move absolute position center
