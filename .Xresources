@@ -1,51 +1,44 @@
-! +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-! title      Nord XResources                                    +
-! project    nord-xresources                                    +
-! version    0.1.0                                              +
-! repository https://github.com/arcticicestudio/nord-xresources +
-! author     Arctic Ice Studio                                  +
-! email      development@arcticicestudio.com                    +
-! copyright  Copyright (C) 2016                                 +
-! +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
 
-*.foreground:   nord4
-*.background:   nord0
-*.cursorColor:  nord4
-*fading: 35
-*fadeColor: nord3
+#define base00 #121c21
+#define base01 #3E4970
+#define base02 #304b59
+#define base03 #3f6173
+#define base04 #7b8e98
+#define base05 #aaafb2
+#define base06 #bcd9e8
+#define base07 #cfefff
+#define base08 #f0696f
+#define base09 #fa9a6a
+#define base0A #f7cca1
+#define base0B #76a08c
+#define base0C #5f9993
+#define base0D #718c97
+#define base0E #ceb5ce
+#define base0F #877366
 
-*.color0: nord1
-*.color1: nord11
-*.color2: nord14
-*.color3: nord13
-*.color4: nord9
-*.color5: nord15
-*.color6: nord8
-*.color7: nord5
-*.color8: nord3
-*.color9: nord11
-*.color10: nord14
-*.color11: nord13
-*.color12: nord9
-*.color13: nord15
-*.color14: nord7
-*.color15: nord6
+*.foreground:   base05
+*.background:   base00
+*.cursorColor: base05
+*fading: 0
+*fadeColor: #0F0209
+
+*color0:       base00
+*color1:       base01
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base08
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15: 		base07
 
 !-----------------------------------------------------------------------
 !                        URxvt settings 
@@ -84,11 +77,11 @@ URxvt.keysym.Control-Right: \033[1;5C
 
 rofi.modi: window,run,ssh,drun
 
-rofi.font: SFNS Display Regular 12
+rofi.font: Source Code Pro Regular 11
 rofi.hide-scrollbar: true
-rofi.bw: 2 !border width
+rofi.bw: 1 !border width
 rofi.columns: 3
-rofi.padding: 10
+rofi.padding: 15
 rofi.sidebar-mode: true
 rofi.separator-style: solid
 
@@ -103,10 +96,10 @@ rofi.fullscreen: false
 rofi.show-icons: true
 
 !rofi colors
-#define bg #2b303b
-#define fg #839496
-#define hlbg #8fa1b3
-#define hlfg #2b303b
+#define bg base00
+#define fg base05
+#define hlbg base05
+#define hlfg base00
 
 rofi.color-enabled: true
 
@@ -116,4 +109,4 @@ rofi.color-urgent: bg, 		fg, 	bg,     	hlbg, 	hlfg
 rofi.color-active: bg,		fg,		bg,		 	hlbg, 	hlfg
 
 !                  'background',	'border',	'separator'
-rofi.color-window:  bg,				 fg,		 fg
+rofi.color-window:  bg,				 base09,		 fg

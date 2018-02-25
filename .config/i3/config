@@ -298,7 +298,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # config colors
 #class                  border  backgr. text    indicator
-client.focused          #1f324e #1f324e $white   $pink
+client.focused          #ee9966 #ee9966 $white   $pink
 client.unfocused        $bg     $bg     $white   $pink
 client.focused_inactive $dark   $bg     $white   $pink
 client.urgent           $fg     $fg     $bg    $dark

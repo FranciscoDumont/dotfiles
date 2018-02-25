@@ -1,5 +1,5 @@
 [global]
-    font = Ubuntu 11
+    font = Overpass Mono 10
 
     # Allow a small subset of html markup in notifications and formats:
     #   <b>bold</b>
@@ -34,7 +34,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = center
+    alignment = right
 
     # The frequency with which text that is longer than the notification
     # window allows bounces back and forth.
@@ -71,7 +71,7 @@
 
     # Shrink window if it's smaller than the width.  Will be ignored if
     # width is 0.
-    shrink = no
+    shrink = yes
 
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
@@ -107,7 +107,7 @@
     history_length = 20
 
     # Display indicators for URLs (U) and actions (A).
-    show_indicators = yes
+    show_indicators = no
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -127,7 +127,7 @@
     padding = 8
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 12
 
     # Define a color for the separator.
     # possible values are:
@@ -135,7 +135,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = foreground
 
     # Print a notification on startup.
     # This is mainly for error detection, since dbus (re-)starts dunst
@@ -149,13 +149,15 @@
     browser = /usr/bin/firefox -new-tab
 
     # Align icons left/right/off
-    icon_position = off
+    icon_position = left
 
     # Paths to default icons.
     icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/hicolor/16x16/apps/
 
+    max_icon_size = 64
+
 [frame]
-    width = 2
+    width = 1
     #color = "#aaaaaa"
 
 [shortcuts]
@@ -180,20 +182,20 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#1C2028"
-    foreground = "#8A9899"
-    frame_color = "#8A9899"
+ 	background = "#121c21"
+	foreground = "#ddccbb"
+    frame_color = "#ee9966"
     timeout = 10
  
 [urgency_normal]
-    background = "#1C2028"
-    foreground = "#ECEFF4"
-    frame_color = "#ECEFF4"
+	background = "#121c21"
+	foreground = "#ddccbb"
+    frame_color = "#ee9966"
     timeout = 10
 
 [urgency_critical]
-    background = "#dd8899"
-    foreground = "#ECEFF4"
+	background = "#121c21"
+	foreground = "#ddccbb"
     frame_color = "#ECEFF4"
     timeout = 0
 
@@ -254,9 +256,9 @@
 #
 # vim: ft=cfg
 
-[spotify]
-    appname = *Spotify*
-    new_icon = spotify-client
+#[spotify]
+#    appname = Spotify
+#    new_icon = spotify-client
 
 [pa-applet]
 	appname = *pa-applet*

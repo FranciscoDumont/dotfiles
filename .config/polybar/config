@@ -8,13 +8,20 @@
 ;=====================================================
 
 [colors]
-background = #222
+foreground = #aaafb2
+background = #ff121c21
+
 background-alt = #444
-foreground = #dfdfdf
 foreground-alt = #55
 primary = #333
 secondary = #e60053
 alert = #bd2c40 
+
+red = #f0696f
+pink = #cc3344
+yellow = #ee9966
+lightBlue = #233640
+dark = #0A0F12
 
 [global/wm]
 margin-top = 5
@@ -36,8 +43,8 @@ overline-color = #f00
 underline-size = 2
 underline-color = #00f
 
-border-top-size = 2
-border-top-color = #333
+border-top-size = 1
+border-top-color = ${colors.lightBlue}
 
 padding-left = 0
 padding-right = 2
@@ -161,9 +168,9 @@ label-mode-font = 2
 ;   %output%
 ; Default: %icon%  %name%
 label-focused = %icon%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = #333333
-label-focused-underline = ${colors.primary}
+label-focused-foreground = ${colors.pink}
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.background}
 label-focused-padding = 3
 label-focused-font = 2
 
