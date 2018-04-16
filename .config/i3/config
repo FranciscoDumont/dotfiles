@@ -141,8 +141,9 @@ bindsym $mod+Tab workspace back_and_forth
 
 bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
 bindsym $mod+m exec thunar #$mod+m => thunar
-bindsym $mod+Shift+m exec nautilus --no-desktop #$mod+Shift+m => nautilus
-bindsym Print exec --no-startup-id xfce4-screenshooter #imprimir pantalla
+bindsym $mod+Shift+m exec thunar ~/UTN #$mod+Shift+m => nautilus
+bindsym Print exec --no-startup-id scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png
+bindsym Shift+Print exec --no-startup-id xfce4-screenshooter #imprimir pantalla
 
 bindsym $mod+F1 exec --no-startup-id firefox
 bindsym $mod+F2 exec --no-startup-id agenda
@@ -160,6 +161,55 @@ bindsym $mod+minus scratchpad show
 exec --no-startup-id gnome-terminal --hide-menubar --role scratchpad
 for_window [class="Gnome-terminal" window_role="scratchpad"] move scratchpad
 
+# i3-gaps
+for_window [class="^.*"] border pixel 1
+
+gaps inner 10
+gaps outer 5
+
+smart_gaps on
+smart_borders on
+
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+
+#
+
 
 assign [class="Firefox"] $workspace1
 for_window [class="Firefox"] border none
@@ -174,8 +224,9 @@ for_window [class="discord"] move to workspace $workspace5
 for_window [class="XTerm"] floating enable, resize set 640 480, move absolute position center, border none
 for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none 
 for_window [class="TelegramDesktop"] move to workspace $workspace5, border none
-for_window [class="Tilda"] floating enable
+for_window [class="Tilda"] floating enable, border none
 assign [class="dosbox"] $workspace6
+assign [class="Eclipse"] $workspace3
 #floating_maximum_size 768 x 576 
 
 exec --no-startup-id firefox
