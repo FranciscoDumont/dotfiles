@@ -12,5 +12,6 @@
 !.gitignore
 !.profile
 !.Xresources
+!.vimrc
 
 !README.md
