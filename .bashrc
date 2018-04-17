@@ -47,4 +47,5 @@ alias l='ls -CF'
 alias top="vtop"
 alias oldtop="/usr/bin/top"
 alias yt2mp3="youtube-dl --extract-audio --audio-format mp3"
-
+alias bot="cd ~/InstaPy;python quickstart.py"
+alias black="xbacklight -steps 300 -time 2000 -set 0"

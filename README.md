@@ -1,6 +1,4 @@
-![Desktop](https://k50.kn3.net/91803E86B.png)
-
-Inspired by [Nord colors](https://github.com/arcticicestudio/nord)
+![Desktop](https://k62.kn3.net/39C798435.png)
 
 OS: Manjaro Linux
 
