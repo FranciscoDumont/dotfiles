@@ -28,7 +28,8 @@ font pango:Overpass Regular 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $term
+#bindsym $mod+Return exec $term
+bindsym $mod+Return exec termite
 bindsym $mod+Shift+Return exec xterm -e ranger $HOME/Pictures/Wallpapers
 
 # kill focused window
@@ -141,7 +142,7 @@ bindsym $mod+Tab workspace back_and_forth
 
 bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
 bindsym $mod+m exec thunar #$mod+m => thunar
-bindsym $mod+Shift+m exec thunar ~/UTN #$mod+Shift+m => nautilus
+# bindsym $mod+Shift+m exec thunar ~/UTN #$mod+Shift+m => nautilus
 bindsym Print exec --no-startup-id scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png
 bindsym Shift+Print exec --no-startup-id xfce4-screenshooter #imprimir pantalla
 
@@ -158,8 +159,8 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Terminal scratchpad
-exec --no-startup-id gnome-terminal --hide-menubar --role scratchpad
-for_window [class="Gnome-terminal" window_role="scratchpad"] move scratchpad
+exec --no-startup-id termite --role scratchpad
+for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 740 480, move absolute position center, move scratchpad
 
 # i3-gaps
 for_window [class="^.*"] border pixel 1
@@ -395,3 +396,36 @@ bindsym $mod+b border toggle
 
 
 for_window [class="mpv"] floating enable,resize set 854 480,move absolute position center
+
+
+
+# Folder Shorcuts Mode
+
+set $mode_folders Open Folder:(1) Pictures,(2) Downloads,(3) UTN,(4) Desktop,(5) Dropbox,(6) Music,(7) Documents,(8) Videos
+
+#(1) Pictures,
+#(2) Downloads,
+#(3) UTN,
+#(4) Desktop,
+#(5) Dropbox,
+#(6) Music,
+#(7) Documents,
+#(8) Videos
+
+
+bindsym $mod+Shift+m mode "$mode_folders"
+
+mode "$mode_folders" {
+        bindsym 1      exec thunar ~/Pictures
+        bindsym 2      exec thunar ~/Downloads
+        bindsym 3      exec thunar ~/UTN
+        bindsym 4      exec thunar ~/Desktop
+        bindsym 5      exec thunar ~/Dropbox
+        bindsym 6      exec thunar ~/Music
+        bindsym 7      exec thunar ~/Documents
+        bindsym 8      exec thunar ~/Videos
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+

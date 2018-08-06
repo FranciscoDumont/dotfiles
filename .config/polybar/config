@@ -51,7 +51,8 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "Overpass Regular:pixelsize=8.5;1"
+#font-0 = "Overpass Regular:pixelsize=8.5;1"
+font-0 = scientifica
 font-1 = FontAwesome:size=11;2
 font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = dejavusans:pixelsize=10;1
@@ -65,7 +66,7 @@ font-4 = FontAwesome:size=11;1
 ;font-5 = Termsynu:size=8:antialias=false;0
 
 modules-left = i3 xwindow
-modules-center = music
+modules-center = music  
 modules-right = volume cpu date date2 powermenu
 
 tray-position = right
@@ -321,7 +322,7 @@ date-alt = %A, %d %B %Y
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = " " 
+format-prefix = "%{T2} %{T-} " 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #9f78e1
 

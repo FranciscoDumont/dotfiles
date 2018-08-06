@@ -61,7 +61,9 @@ URxvt*scrollTtyOutput:   false
 URxvt*scrollWithBuffer:  true
 URxvt*scrollTtyKeypress: true
 
-URxvt*font: xft:Source Code Pro:size=10
+!URxvt*font: xft:Source Code Pro:size=11
+URxvt*font: xft:Source Code Pro for Powerline:size=11
+!URxvt*font: xft:Inconsolata for Powerline:size=13:style=Medium
 
 
 ! match vte/xterm
