@@ -12,5 +12,7 @@
 !.gitignore
 !.profile
 !.Xresources
+!.vimrc
+!.zshrc
 
 !README.md
