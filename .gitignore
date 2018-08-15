@@ -2,10 +2,20 @@
 *
 
 # Files currently being tracked by Git and contained in this repo
-!.config/*
 !.i3/*
 .i3/scripts-i3blocks/*
 .i3/i3blocks
+
+!.config/cava/*
+!.config/dunst/*
+!.config/gtk-3.0/*
+!.config/i3/*
+!.config/polybar/*
+!.config/ranger/*
+!.config/termite/*
+!.config/tilda/*
+!.config/compton.conf
+
 
 !.fonts/*
 !.bashrc
