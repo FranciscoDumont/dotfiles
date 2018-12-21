@@ -3,7 +3,7 @@
 #audible_bell = false
 clickable_url = true
 #dynamic_title = true
-font = Inconsolata for Powerline 13
+font = Inconsolata for Powerline 11
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
