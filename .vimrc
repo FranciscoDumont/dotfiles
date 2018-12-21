@@ -1,8 +1,8 @@
+" Plugins
 call plug#begin('~/.vim/plugged')
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
 if !exists('g:airline_symbols')
@@ -14,7 +14,10 @@ set autoindent
 set tabstop=4
 colorscheme default
 set background=dark
-set number
+set number relativenumber
+set ignorecase
 syntax on
 
+let mapleader =" "
 let g:airline_powerline_fonts = 1
+map <leader>t :FZF<CR>

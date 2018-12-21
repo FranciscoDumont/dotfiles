@@ -49,3 +49,5 @@ alias oldtop="/usr/bin/top"
 alias yt2mp3="youtube-dl --extract-audio --audio-format mp3"
 alias bot="cd ~/InstaPy;python quickstart.py"
 alias black="xbacklight -steps 300 -time 2000 -set 0"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -99,6 +99,7 @@ alias oldtop="/usr/bin/top"
 alias yt2mp3="youtube-dl --extract-audio --audio-format mp3"
 alias bot="cd ~/InstaPy;python quickstart.py"
 alias black="xbacklight -steps 300 -time 2000 -set 0"
+alias radio="mpv --ytdl-format=\"[height<360]\" --no-video https://www.youtube.com/watch\?v\=hHW1oY26kxQ"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -115,4 +116,10 @@ compinit
 
 prompt_context() {}
 
-. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -U -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
