@@ -102,7 +102,7 @@ set $workspace6 6
 set $workspace7 7
 set $workspace8 8
 set $workspace9 9
-set $workspace10 "10" 
+set $workspace10 "10"
 
 #Link https://github.com/FortAwesome/Font-Awesome
 
@@ -137,7 +137,7 @@ bindsym Control+Mod1+Shift+Left      exec "i3-msg move container to workspace pr
 
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
- 
+
 #bindsym
 
 bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
@@ -145,6 +145,9 @@ bindsym $mod+m exec thunar #$mod+m => thunar
 # bindsym $mod+Shift+m exec thunar ~/UTN #$mod+Shift+m => nautilus
 bindsym Print exec --no-startup-id scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png
 bindsym Shift+Print exec --no-startup-id xfce4-screenshooter #imprimir pantalla
+bindsym --release $mod+Shift+c exec "~/bin/emojiArray | xclip -selection clipboard"
+bindsym --release $mod+Shift+t exec "~/bin/toggleScreen"
+bindsym $mod+u exec "~/bin/dmenuunicode"
 
 bindsym $mod+F1 exec --no-startup-id firefox
 bindsym $mod+F2 exec --no-startup-id agenda
@@ -160,7 +163,7 @@ bindsym $mod+minus scratchpad show
 
 # Terminal scratchpad
 exec --no-startup-id termite --role scratchpad
-for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 740 480, move absolute position center, move scratchpad
+for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 1200 480, move absolute position center, move scratchpad
 
 # i3-gaps
 for_window [class="^.*"] border pixel 1
@@ -221,14 +224,14 @@ assign [class="Sublime_text"] $workspace3
 assign [class="GitKraken"] $workspace3
 assign [class="libreoffice"] $workspace10
 for_window [class="Spotify"] move to workspace $workspace4
-for_window [class="discord"] move to workspace $workspace5
+for_window [class="discord"] move to workspace $workspace6
 for_window [class="XTerm"] floating enable, resize set 640 480, move absolute position center, border none
-for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none 
+for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none
 for_window [class="TelegramDesktop"] move to workspace $workspace5, border none
 for_window [class="Tilda"] floating enable, border none
 assign [class="dosbox"] $workspace6
 assign [class="Eclipse"] $workspace3
-#floating_maximum_size 768 x 576 
+#floating_maximum_size 768 x 576
 
 exec --no-startup-id firefox
 exec --no-startup-id dropbox start
@@ -237,14 +240,14 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id numlockx on
 exec --no-startup-id caffeine #Caffeine-ng
-#exec --no-startup-id 
+#exec --no-startup-id
 
 
 exec_always --no-startup-id "compton --config ~/.config/compton.conf"
 
 # Neon
 #exec_always --no-startup-id compton -f -c --shadow-red 0.5 --shadow-green 0.1 --shadow-blue 0.4 -r 20
- 
+
 #background             alpha.wallhaven.cc/
 exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg
 #Other scaling options include:
@@ -301,7 +304,7 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-# Hybrid colors 
+# Hybrid colors
 # Le mando con gpick
 #https://www.canva.com/color-palette/
 #http://www.palettefx.com/
@@ -330,7 +333,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # finds out, if available)
 #bar {
 #    id bar-0
-#    #tray_output none 
+#    #tray_output none
 #    position bottom
 #    status_command i3blocks -c $HOME/.i3/i3blocks.conf
 #    strip_workspace_numbers yes
@@ -343,7 +346,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #    # workspace indicators border       backgr          text
 #        focused_workspace  $bg          $bg             $fg
 #        active_workspace   $white       $dark           $dark   #no se que es
-#        inactive_workspace $bg          $bg             $white  
+#        inactive_workspace $bg          $bg             $white
 #        urgent_workspace   $fg          $fg             $bg
 #    }
 #}
@@ -416,16 +419,31 @@ set $mode_folders Open Folder:(1) Pictures,(2) Downloads,(3) UTN,(4) Desktop,(5)
 bindsym $mod+Shift+m mode "$mode_folders"
 
 mode "$mode_folders" {
-        bindsym 1      exec thunar ~/Pictures
-        bindsym 2      exec thunar ~/Downloads
-        bindsym 3      exec thunar ~/UTN
-        bindsym 4      exec thunar ~/Desktop
-        bindsym 5      exec thunar ~/Dropbox
-        bindsym 6      exec thunar ~/Music
-        bindsym 7      exec thunar ~/Documents
-        bindsym 8      exec thunar ~/Videos
+        bindsym 2      exec thunar ~/Downloads  ; mode "default"
+        bindsym 1      exec thunar ~/Pictures   ; mode "default"
+        bindsym 3      exec thunar ~/UTN    ; mode "default"
+        bindsym 4      exec thunar ~/Desktop    ; mode "default"
+        bindsym 5      exec thunar ~/Dropbox    ; mode "default"
+        bindsym 6      exec thunar ~/Music  ; mode "default"
+        bindsym 7      exec thunar ~/Documents  ; mode "default"
+        bindsym 8      exec thunar ~/Videos ; mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
 
+
+# Launch mode, one app per key.
+set $mode_launch Launch:(A)tom,(E)clipse,(D)beaver,(T)ermite,(G)itkraken
+bindsym $mod+Shift+d mode "$mode_launch"
+
+mode "$mode_launch" {
+    bindsym a exec --no-startup-id atom
+    bindsym e exec --no-startup-id eclipse
+    bindsym d exec --no-startup-id dbeaver
+    bindsym t exec --no-startup-id termite
+    bindsym g exec --no-startup-id gitkraken
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
