@@ -15,6 +15,7 @@
 !.config/termite/*
 !.config/tilda/*
 !.config/compton.conf
+!.config/powerline/*
 
 
 !.fonts/*
