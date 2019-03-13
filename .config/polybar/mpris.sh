@@ -6,7 +6,9 @@ icon="♫"
 
 player_status=$(playerctl status 2> /dev/null)
 if [[ $? -eq 0 ]]; then
-    metadata="$(playerctl metadata artist) - $(playerctl metadata title)"
+	if [[ $player_status = "No players found" ]]; then
+    	metadata="$(playerctl metadata artist) - $(playerctl metadata title)"
+    fi
 fi
 
 # Foreground color formatting tags are optional
