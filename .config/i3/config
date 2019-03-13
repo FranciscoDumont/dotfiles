@@ -233,7 +233,7 @@ assign [class="dosbox"] $workspace6
 assign [class="Eclipse"] $workspace3
 #floating_maximum_size 768 x 576
 
-exec --no-startup-id firefox
+#exec --no-startup-id firefox
 exec --no-startup-id dropbox start
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id xfce4-power-manager
@@ -434,14 +434,14 @@ mode "$mode_folders" {
 
 
 # Launch mode, one app per key.
-set $mode_launch Launch:(A)tom,(E)clipse,(D)beaver,(T)ermite,(G)itkraken
+set $mode_launch Launch:(A)tom,(E)clipse,(D)iscord,(T)elegram,(G)itkraken
 bindsym $mod+Shift+d mode "$mode_launch"
 
 mode "$mode_launch" {
     bindsym a exec --no-startup-id atom
     bindsym e exec --no-startup-id eclipse
-    bindsym d exec --no-startup-id dbeaver
-    bindsym t exec --no-startup-id termite
+    bindsym d exec --no-startup-id discord
+    bindsym t exec --no-startup-id telegram-desktop
     bindsym g exec --no-startup-id gitkraken
 
     bindsym Return mode "default"
