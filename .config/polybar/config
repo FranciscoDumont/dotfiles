@@ -57,6 +57,7 @@ font-1 = FontAwesome:size=11;2
 font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = dejavusans:pixelsize=10;1
 font-4 = FontAwesome:size=11;1
+font-5 = Symbola:size=11;2
 
 ;font-0 = NotoSans-Regular:size=8;0
 ;font-1 = unifont:size=6;-3
@@ -233,9 +234,8 @@ toggle-off-foreground = #66
 
 type = internal/xbacklight
 
-format-prefix = " "
-format = <label> <bar>
-;agregar <ramp> cuando este en manjaro
+;format-prefix = " "
+format = <ramp> <label> <bar>
 
 label = %percentage%%
 
@@ -245,7 +245,6 @@ ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
 
-ramp-font = 1
 bar-width = 10
 bar-indicator = │
 bar-indicator-foreground = #ff
