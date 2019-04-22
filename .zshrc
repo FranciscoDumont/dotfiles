@@ -96,10 +96,11 @@ source $ZSH/oh-my-zsh.sh
 
 alias top="vtop"
 alias oldtop="/usr/bin/top"
-alias yt2mp3="youtube-dl --extract-audio --audio-format mp3"
+alias yt2mp3="youtube-dl --extract-audio --audio-format mp3 --output '%(title)s.%(ext)s'"
 alias bot="cd ~/InstaPy;python quickstart.py"
 alias black="xbacklight -steps 300 -time 2000 -set 0"
 alias radio="mpv --ytdl-format=\"[height<360]\" --no-video https://www.youtube.com/watch\?v\=hHW1oY26kxQ"
+alias lobo="xclip -selection clipboard -t image/png -i ~/Pictures/Lobo/$(ls ~/Pictures/Lobo| shuf -n 1)"
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -116,6 +117,9 @@ compinit
 
 prompt_context() {}
 
+#powerline-daemon -q
+#POWERLINE_BASH_CONTINUATION=1
+#POWERLINE_BASH_SELECT=1
 . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # fzf

@@ -1,6 +1,6 @@
 tilda_config_version="1.3.3"
 command="cava"
-font="Monospace 11"
+font="Monospace 6"
 key="F1"
 addtab_key="<Shift><Control>t"
 fullscreen_key="F11"
