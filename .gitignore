@@ -1,29 +1,50 @@
-# Ignore files not tracked by Git
+# Ignore everything
 *
 
-# Files currently being tracked by Git and contained in this repo
-!.i3/*
-.i3/scripts-i3blocks/*
-.i3/i3blocks
+# But do not ignore this folders and their content
+!.config/
+.config/*
 
+!.config/cava/
 !.config/cava/*
+
+!.config/dunst/
 !.config/dunst/*
+
+!.config/gtk-3.0/
 !.config/gtk-3.0/*
+
+!.config/i3/
 !.config/i3/*
+
+!.config/polybar/
 !.config/polybar/*
+
+!.config/ranger/
 !.config/ranger/*
+
+!.config/termite/
 !.config/termite/*
+
+!.config/tilda/
 !.config/tilda/*
-!.config/compton.conf
+
+!.config/powerline/
 !.config/powerline/*
 
+!.config/compton.conf
 
+
+!.fonts/
 !.fonts/*
+
+
 !.bashrc
 !.gitignore
 !.profile
 !.Xresources
 !.vimrc
 !.zshrc
+!.tmux.conf
 
 !README.md
