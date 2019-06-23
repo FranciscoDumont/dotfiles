@@ -102,6 +102,13 @@ alias black="xbacklight -steps 300 -time 2000 -set 0"
 alias radio="mpv --ytdl-format=\"[height<360]\" --no-video https://www.youtube.com/watch\?v\=hHW1oY26kxQ"
 alias lobo="xclip -selection clipboard -t image/png -i ~/Pictures/Lobo/$(ls ~/Pictures/Lobo| shuf -n 1)"
 
+#LSDeluxe alias
+alias ls='lsd'
+alias l='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
