@@ -127,7 +127,10 @@ prompt_context() {}
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
-. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+case $(tty) in
+  (/dev/tty[1-9]) export PS1='%B%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~%F{red}]%b%f%# ';;
+              (*) . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh;
+esac
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
