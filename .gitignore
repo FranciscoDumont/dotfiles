@@ -32,6 +32,9 @@
 !.config/powerline/
 !.config/powerline/*
 
+!.config/nvim/
+!.config/nvim/init.vim
+
 !.config/compton.conf
 
 

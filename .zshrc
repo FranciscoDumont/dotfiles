@@ -101,6 +101,9 @@ alias bot="cd ~/InstaPy;python quickstart.py"
 alias black="xbacklight -steps 300 -time 2000 -set 0"
 alias radio="mpv --ytdl-format=\"[height<360]\" --no-video https://www.youtube.com/watch\?v\=hHW1oY26kxQ"
 alias lobo="xclip -selection clipboard -t image/png -i ~/Pictures/Lobo/$(ls ~/Pictures/Lobo| shuf -n 1)"
+alias vi3="nvim $HOME/.config/i3/config"
+alias vim="nvim"
+alias oldvim="vim"
 
 #LSDeluxe alias
 alias ls='lsd'
