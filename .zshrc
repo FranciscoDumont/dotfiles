@@ -1,3 +1,4 @@
+#zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -7,7 +8,58 @@
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+
+
+################################################################
+# Theme
+
+case $(tty) in
+  (/dev/tty[1-9])
+                  IS_TTY=true
+                  ;;
+              (*)
+                  ZSH_THEME="powerlevel9k/powerlevel9k"
+                  POWERLEVEL9K_MODE="nerdfont-complete"
+                  source $HOME/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+                  ;;
+esac
+
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_rainbow dir )
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+
+# Dir
+POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{black} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{white}"
+POWERLEVEL9K_DIR_HOME_BACKGROUND='001'
+POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='001'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND='yellow'
+
+# Final spaces to fix glyphs
+POWERLEVEL9K_HOME_ICON='\uF015 '
+POWERLEVEL9K_HOME_SUB_ICON='\uF07C '
+POWERLEVEL9K_FOLDER_ICON='\uF115 '
+POWERLEVEL9K_ETC_ICON='\uF013 '
+
+# Git
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='006'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='006'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='black'
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='006'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
+
+# Status
+POWERLEVEL9K_STATUS_OK='false'
+
+# Custom rainbow user@host
+rainbow(){
+    echo -n "%F{002}\uf004  %F{magenta}[%F{yellow}$USER%F{green}@%F{blue}$HOST%F{magenta}]"
+}
+POWERLEVEL9K_CUSTOM_RAINBOW="rainbow"
+POWERLEVEL9K_CUSTOM_RAINBOW_BACKGROUND="black"
+################################################################
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -130,13 +182,14 @@ prompt_context() {}
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
-case $(tty) in
-  (/dev/tty[1-9]) export PS1='%B%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~%F{red}]%b%f%# ';;
-              (*) . /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh;
-esac
+
+if [ IS_TTY ]; then
+    export PS1='%B%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~%F{red}]%b%f%# '
+fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -U -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+#zprof
