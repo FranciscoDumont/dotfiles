@@ -1,15 +1,29 @@
-![Desktop](https://image.ibb.co/dYawrK/2018_08_06_00_52_30_screenshot.png)
+# Dotfiles :computer:
 
-OS: Manjaro Linux
+![Desktop](.screenshots/screenshot.png)
 
-WM: i3
+## Details :thinking:
 
-GTK Theme: Arc-Breath-Darker
++ **OS**: Manjaro Linux
++ **WM**: i3-gaps
++ **Terminal**: Termite
++ **Shell**: Zsh 
++ **Text editor**: Neovim
++ **Font**: Inconsolata Nerd Font 11
++ **Bar**: Polybar
++ **GTK Theme**: Adapta-Nokto-Eta
++ **Icon Theme**: Papirus
++ **Cursor Theme**: Capitaine Cursors
 
-Icon Theme: Papirus
 
-Font: Roboto 11
+## Neovim :pencil:
 
-Bar: Polybar
+![Vim](.screenshots/vim.gif)
 
-Terminal: URXVT
+## Lockscreen :lock:
+
+![Lockscreen](.screenshots/lockscreen.png)
+
+## Color palette :art:
+
+![Palette](.screenshots/palette.png)
