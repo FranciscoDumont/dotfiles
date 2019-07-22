@@ -11,8 +11,7 @@
 !.config/dunst/
 !.config/dunst/*
 
-!.config/gtk-3.0/
-!.config/gtk-3.0/*
+!.config/gtk-3.0/gtk.css
 
 !.config/i3/
 !.config/i3/*
@@ -20,8 +19,8 @@
 !.config/polybar/
 !.config/polybar/*
 
-!.config/ranger/
-!.config/ranger/*
+!.config/ranger/rc.conf
+!.config/ranger/rifle.conf
 
 !.config/termite/
 !.config/termite/*
@@ -40,6 +39,9 @@
 
 !.fonts/
 !.fonts/*
+
+!.screenshots/
+!.screenshots/*
 
 
 !.bashrc
