@@ -384,10 +384,10 @@ bindsym XF86AudioPrev exec playerctl previous
 #exec --no-startup-id xset s noblank
 exec --no-startup-id xset dpms 1500 1500 1800
 exec --no-startup-id xset s off
-exec --no-startup-id xautolock -time 30 -locker "~/.config/i3/lock.sh ~/.config/i3/lock.png"
+exec --no-startup-id xautolock -time 30 -locker "~/.config/i3/glitchlock"
 #exec --no-startup-id xset -dpms
 
-bindsym $mod+l exec "~/.config/i3/lock.sh ~/.config/i3/lock.png"
+bindsym $mod+Shift+l exec "~/.config/i3/glitchlock"
 #https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/
 
 # Borders
