@@ -28,9 +28,6 @@
 !.config/tilda/
 !.config/tilda/*
 
-!.config/powerline/
-!.config/powerline/*
-
 !.config/nvim/
 !.config/nvim/init.vim
 
@@ -44,12 +41,10 @@
 !.screenshots/*
 
 
-!.bashrc
 !.gitignore
 !.profile
 !.Xresources
 !.vimrc
 !.zshrc
-!.tmux.conf
 
 !README.md
