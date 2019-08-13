@@ -1,44 +1,41 @@
-
-#define base00 #121c21
-#define base01 #3E4970
-#define base02 #304b59
-#define base03 #3f6173
-#define base04 #7b8e98
-#define base05 #aaafb2
-#define base06 #bcd9e8
-#define base07 #cfefff
-#define base08 #f0696f
-#define base09 #fa9a6a
-#define base0A #f7cca1
-#define base0B #76a08c
-#define base0C #5f9993
-#define base0D #718c97
-#define base0E #ceb5ce
-#define base0F #877366
-
-*.foreground:   base05
-*.background:   base00
-*.cursorColor: base05
+! special
+*.foreground:   #eeffff
+*.background:   #111a1f
+*.cursorColor:  #eeffff
 *fading: 0
 *fadeColor: #0F0209
 
-*color0:       base00
-*color1:       base01
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
+! black
+*.color0:       #212121
+*.color8:       #4a4a4a
 
-*color8:       base03
-*color9:       base09
-*color10:      base08
-*color11:      base02
-*color12:      base04
-*color13:      base06
-*color14:      base0F
-*color15: 		base07
+! red
+*.color1:       #3e4970
+*.color9:       #3e4970
+
+! green
+*.color2:       #f0696f
+*.color10:      #f0696f
+
+! yellow
+*.color3:       #ffcb6b
+*.color11:      #ffcb6b
+
+! blue
+*.color4:       #82aaff
+*.color12:      #82aaff
+
+! magenta
+*.color5:       #c792ea
+*.color13:      #c792ea
+
+! cyan
+*.color6:       #89ddff
+*.color14:      #89ddff
+
+! white
+*.color7:       #eeffff
+*.color15:      #ffffff
 
 !-----------------------------------------------------------------------
 !                        URxvt settings 
@@ -98,10 +95,11 @@ rofi.fullscreen: false
 rofi.show-icons: true
 
 !rofi colors
-#define bg base00
-#define fg base05
-#define hlbg base05
-#define hlfg base00
+#define bg #111a1f
+#define fg #eeffff
+#define hlbg #4a4a4a
+#define hlfg #eeffff
+#define border #fa9a6a
 
 rofi.color-enabled: true
 
@@ -111,4 +109,4 @@ rofi.color-urgent: bg, 		fg, 	bg,     	hlbg, 	hlfg
 rofi.color-active: bg,		fg,		bg,		 	hlbg, 	hlfg
 
 !                  'background',	'border',	'separator'
-rofi.color-window:  bg,				 base09,		 fg
+rofi.color-window:  bg,				 border,		 fg
