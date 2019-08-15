@@ -31,6 +31,9 @@
 !.config/nvim/
 !.config/nvim/init.vim
 
+!.config/gsimplecal/
+!.config/gsimplecal/config
+
 !.config/compton.conf
 
 
