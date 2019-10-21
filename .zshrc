@@ -26,7 +26,7 @@ esac
 
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_rainbow dir )
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs status vcs)
 
 # Dir
 POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{black} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{white}"
@@ -149,13 +149,17 @@ source $ZSH/oh-my-zsh.sh
 alias top="vtop"
 alias oldtop="/usr/bin/top"
 alias yt2mp3="youtube-dl --extract-audio --audio-format mp3 --output '%(title)s.%(ext)s'"
-alias bot="cd ~/InstaPy;python quickstart.py"
 alias black="xbacklight -steps 300 -time 2000 -set 0"
 alias radio="mpv --ytdl-format=\"[height<360]\" --no-video https://www.youtube.com/watch\?v\=hHW1oY26kxQ"
 alias lobo="xclip -selection clipboard -t image/png -i ~/Pictures/Lobo/$(ls ~/Pictures/Lobo| shuf -n 1)"
 alias vi3="nvim $HOME/.config/i3/config"
 alias vim="nvim"
 alias oldvim="vim"
+alias invert="xcalib -invert -alter"
+alias wttr="curl wttr.in/Buenos_Aires\?lang=es"
+alias bc="bc -l"
+
+cheat(){~/bin/cht.sh "$@" | less}
 
 #LSDeluxe alias
 alias ls='lsd'
@@ -190,6 +194,6 @@ fi
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -U -g ""'
+export FZF_DEFAULT_COMMAND='ag --depth 3 --hidden --ignore .git -U -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #zprof
