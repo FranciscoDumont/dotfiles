@@ -57,7 +57,7 @@ font-1 = FontAwesome:size=11;2
 font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = dejavusans:pixelsize=10;1
 font-4 = FontAwesome:size=11;1
-font-5 = JoyPixels:scale=10;
+font-5 = "EmojiOne:pixelsize=16:style=Regular:scale=11;1"
 font-6 = Symbola:size=11;2
 
 ;font-0 = NotoSans-Regular:size=8;0

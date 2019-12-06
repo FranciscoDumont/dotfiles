@@ -45,9 +45,10 @@
 
 
 !.gitignore
+!packages.txt
 !.profile
-!.Xresources
 !.vimrc
+!.Xresources
 !.zshrc
 
 !README.md

@@ -31,7 +31,8 @@ floating_modifier $mod
 #bindsym $mod+Return exec $term
 bindsym $mod+Return exec termite
 #bindsym $mod+Shift+Return exec xterm -e ranger $HOME/Pictures/Wallpapers
-bindsym $mod+Shift+Return exec "xterm -e python ~/Downloads/ranger/ranger.py -r ~/.config/ranger/ $HOME/Pictures/Wallpapers" #to use ueberzug as image preview method 
+#to use ueberzug as image preview method
+bindsym $mod+Shift+Return exec "xterm -e python ~/Downloads/ranger/ranger.py -r ~/.config/ranger/ $HOME/Pictures/Wallpapers"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -147,7 +148,7 @@ bindsym --release $mod+Shift+c exec "~/bin/emojiArray | xclip -selection clipboa
 bindsym --release $mod+Shift+t exec "~/bin/toggleScreen"
 bindsym $mod+u exec "~/bin/dmenuunicode"
 
-bindsym $mod+F1 exec --no-startup-id firefox
+# bindsym $mod+F1 exec --no-startup-id firefox
 bindsym $mod+Shift+F1 exec --no-startup-id qutebrowser
 bindsym $mod+F2 exec --no-startup-id agenda
 bindsym $mod+F3 exec --no-startup-id subl
@@ -215,10 +216,10 @@ mode "$mode_gaps_outer" {
 #
 
 
-assign [class="firefox"] $workspace1
-for_window [class="firefox"] border none
+assign [class="(?i)firefox"] $workspace1
+for_window [class="(?i)firefox"] border none
 assign [class="qutebrowser"] $workspace1
-assign [class="Google-chrome"] $workspace5
+assign [class="Google-chrome"] $workspace1
 for_window [class="Google-chrome"] border none
 assign [class="Libreoffice"] $workspace2
 assign [class="Gnumeric"] $workspace2
@@ -233,7 +234,7 @@ for_window [class="Tilda"] floating enable, border none
 assign [class="dosbox"] $workspace6
 assign [class="Eclipse"] $workspace3
 assign [class="jetbrains-pycharm-ce"] $workspace3
-for_window [class="Firefox" window_role="GtkFileChooserDialog"] resize set 1200 480, move absolute position center
+for_window [class="(?i)firefox" window_role="GtkFileChooserDialog"] resize set 1200 480, move absolute position center
 #floating_maximum_size 768 x 576
 
 #exec --no-startup-id firefox
@@ -432,7 +433,7 @@ mode "$mode_folders" {
 
 
 # Launch mode, one app per key.
-set $mode_launch Launch:(A)tom,(E)clipse,(D)iscord,(T)elegram,(G)itkraken
+set $mode_launch Launch:(A)tom,(E)clipse,(D)iscord,(T)elegram,(G)itkraken,(V)irtualBox
 bindsym $mod+Shift+d mode "$mode_launch"
 
 mode "$mode_launch" {
@@ -441,6 +442,7 @@ mode "$mode_launch" {
     bindsym d exec --no-startup-id discord
     bindsym t exec --no-startup-id telegram-desktop
     bindsym g exec --no-startup-id gitkraken
+    bindsym v exec --no-startup-id VirtualBox
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
