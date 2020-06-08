@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #zmodload zsh/zprof
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -18,9 +25,11 @@ case $(tty) in
                   IS_TTY=true
                   ;;
               (*)
-                  ZSH_THEME="powerlevel9k/powerlevel9k"
+                  ZSH_THEME="powerlevel10k/powerlevel10k"
                   POWERLEVEL9K_MODE="nerdfont-complete"
-                  source $HOME/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+                  source $HOME/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
+
+                  POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{black} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{white}"
                   ;;
 esac
 
@@ -29,7 +38,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_rainbow dir )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs status vcs)
 
 # Dir
-POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{black} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{white}"
+# POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{black} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{white}"
 POWERLEVEL9K_DIR_HOME_BACKGROUND='001'
 POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='001'
@@ -59,6 +68,15 @@ rainbow(){
 }
 POWERLEVEL9K_CUSTOM_RAINBOW="rainbow"
 POWERLEVEL9K_CUSTOM_RAINBOW_BACKGROUND="black"
+
+# Extra space without background on the right side of right prompt
+ZLE_RPROMPT_INDENT=0
+
+# Don't show Git status in prompt for repositories whose workdir matches this pattern.
+# For example, if set to '~', the Git repository at $HOME/.git will be ignored.
+# Multiple patterns can be combined with '|': '~(|/foo)|/bar/baz/*'.
+typeset -g POWERLEVEL9K_VCS_DISABLED_WORKDIR_PATTERN='~'
+
 ################################################################
 
 # Set list of themes to load
