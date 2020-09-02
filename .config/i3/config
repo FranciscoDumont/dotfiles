@@ -87,15 +87,15 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 1
-set $workspace2 2
-set $workspace3 3
-set $workspace4 4
-set $workspace5 5
-set $workspace6 6
-set $workspace7 7
-set $workspace8 8
-set $workspace9 9
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
 set $workspace10 "10"
 
 #Link https://github.com/FortAwesome/Font-Awesome
@@ -135,6 +135,11 @@ bindsym $mod+Shift+k           workspace next
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
 
+# Moving workspaces between screens 
+bindsym $mod+p move workspace to output right
+bindsym $mod+Shift+p exec "~/bin/pantalla"
+workspace $workspace5 output VGA1
+
 #bindsym
 
 bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
@@ -162,7 +167,7 @@ bindsym $mod+minus scratchpad show
 
 # Terminal scratchpad
 exec --no-startup-id termite --role scratchpad
-for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 1200 480, move absolute position center, move scratchpad
+for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 1200 480, move position center, move scratchpad
 
 # i3-gaps
 for_window [class="^.*"] border pixel 1
@@ -222,17 +227,17 @@ for_window [class="Google-chrome"] border none
 assign [class="Libreoffice"] $workspace2
 assign [class="Gnumeric"] $workspace2
 assign [class="Sublime_text"] $workspace3
-assign [class="GitKraken"] $workspace3
+assign [class="GitKraken"] $workspace8
 for_window [class="Spotify"] move to workspace $workspace4
 for_window [class="discord"] move to workspace $workspace6
-for_window [class="XTerm"] floating enable, resize set 640 480, move absolute position center, border none
+for_window [class="XTerm"] floating enable, resize set 640 480, move position center, border none
 for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none
-for_window [class="TelegramDesktop"] move to workspace $workspace5, border none
+for_window [class="TelegramDesktop"] move to workspace $workspace6, border none
 for_window [class="Tilda"] floating enable, border none
-assign [class="dosbox"] $workspace6
+assign [class="dosbox"] $workspace7
 assign [class="Eclipse"] $workspace3
 assign [class="jetbrains-pycharm-ce"] $workspace3
-for_window [class="(?i)firefox" window_role="GtkFileChooserDialog"] resize set 1200 480, move absolute position center
+for_window [class="(?i)firefox" window_role="GtkFileChooserDialog"] resize set 1200 480, move position center
 #floating_maximum_size 768 x 576
 
 #exec --no-startup-id firefox
@@ -246,7 +251,8 @@ exec --no-startup-id caffeine #Caffeine-ng
 exec_always --no-startup-id "compton --config ~/.config/compton.conf"
 
 #background             alpha.wallhaven.cc/
-exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg --bg-fill $HOME/.config/i3/wallpaper_1.jpg
+
 #Other scaling options include:
 #--bg-tile FILE
 #--bg-center FILE
@@ -395,7 +401,7 @@ hide_edge_borders vertical
 bindsym $mod+b border toggle
 
 
-for_window [class="mpv"] floating enable,resize set 854 480,move absolute position center
+for_window [class="mpv"] floating enable,resize set 854 480,move position center
 
 
 
