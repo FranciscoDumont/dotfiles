@@ -36,6 +36,8 @@
 
 !.config/compton.conf
 
+!.config/rofi/
+!.config/rofi/config.rasi
 
 !.fonts/
 !.fonts/*

@@ -1,0 +1,25 @@
+configuration {
+	modi: "window,run,ssh,drun";
+	width: 60;
+	lines: 15;
+	columns: 3;
+	font: "Source Code Pro Regular 11";
+	bw: 1;
+	location: 0;
+	padding: 15;
+	yoffset: 0;
+	fixed-num-lines: true;
+	show-icons: true;
+	sidebar-mode: true;
+	separator-style: "solid";
+	hide-scrollbar: true;
+	fullscreen: false;
+	color-normal: "#111a1f, #eeffff, #111a1f, #4a4a4a, #eeffff";
+	color-urgent: "#111a1f, #eeffff, #111a1f, #4a4a4a, #eeffff";
+	color-active: "#111a1f, #eeffff, #111a1f, #4a4a4a, #eeffff";
+	color-window: "#111a1f, #fa9a6a, #eeffff";
+}
+
+element-icon {
+    size:             2.0em ;
+}
