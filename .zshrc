@@ -167,15 +167,24 @@ alias oldtop="/usr/bin/top"
 alias yt2mp3="youtube-dl --extract-audio --audio-format mp3 --output '%(title)s.%(ext)s'"
 alias black="xbacklight -steps 300 -time 2000 -set 0"
 alias radio="mpv --ytdl-format=\"[height<360]\" --no-video https://www.youtube.com/watch\?v\=hHW1oY26kxQ"
+alias brown="mpv --no-video https://youtu.be/hXetO_bYcMo"
 alias lobo="xclip -selection clipboard -t image/png -i ~/Pictures/Lobo/$(ls ~/Pictures/Lobo| shuf -n 1)"
 alias vi3="nvim $HOME/.config/i3/config"
 alias vim="nvim"
+alias w="nvim /home/panchi/Dropbox/vimwiki/index.wiki"
 alias oldvim="vim"
 alias invert="xcalib -invert -alter"
 alias wttr="curl wttr.in/Buenos_Aires\?lang=es"
 alias bc="bc -l"
+alias gs="git status"
+alias ga="git add --patch"
+alias patri="mpv --script=~/.config/mpv/scripts/mpris.so --no-vid --shuffle Music/Patricio\ Rey"
 
 cheat(){~/bin/cht.sh "$@" | less}
+
+webmTOmp4 () {
+      ffmpeg -i "$1".webm -qscale 0 "$1".mp4
+}
 
 #LSDeluxe alias
 alias ls='lsd'

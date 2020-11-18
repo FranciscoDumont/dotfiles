@@ -41,7 +41,7 @@ yay -S --needed $(< packages.txt)
    - [vim-plug](https://github.com/junegunn/vim-plug#neovim)
    - [compton](https://github.com/tryone144/compton)
    - [scientifica font](https://github.com/NerdyPepper/scientifica)
-   - [apple emojis xd](https://github.com/chrisdruta/arch-linux-apple-emojis)
+   - [apple emojis xd](https://github.com/samuelngs/apple-emoji-linux#installing-prebuilt-applecoloremoji-font)
    - [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh)
 4. Clone this repository
 5. Copy the files you want to change

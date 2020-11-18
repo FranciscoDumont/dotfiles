@@ -38,7 +38,8 @@ bindsym $mod+Shift+q kill
 # start dmenu (a program launcher)
 exec_always xrdb ~/.Xresources
 #bindsym $mod+d exec --no-startup-id rofi -show run -display-run -bg "#223344" -fg "#cc5544" -hlbg "#cc5544" -hlfg "#eeccaa" -hide-scrollbar -font "SFNS Display Regular 13"
-bindsym $mod+d exec "rofi -show drun -modi window,drun,emoji,run,ssh"
+bindsym $mod+d exec "rofi -theme-str 'element-icon { size: 1.0em;}' -show drun -modi window,drun,emoji,run,ssh"
+bindsym $mod+Shift+d exec "rofi -show window -modi window,drun,emoji,run,ssh"
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
@@ -135,26 +136,25 @@ bindsym $mod+Shift+k           workspace next
 workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
 
-# Moving workspaces between screens 
+# Moving workspaces between screens
 bindsym $mod+p move workspace to output right
 bindsym $mod+Shift+p exec "~/bin/pantalla"
 workspace $workspace5 output VGA1
 
 #bindsym
 
-bindsym Control+Mod1+s exec subl #Ctrl+Alt+S => Sublime Text
 bindsym $mod+m exec thunar #$mod+m => thunar
 # bindsym $mod+Shift+m exec thunar ~/UTN #$mod+Shift+m => nautilus
 bindsym Print exec --no-startup-id scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png
 bindsym Shift+Print exec --no-startup-id xfce4-screenshooter #imprimir pantalla
 bindsym --release $mod+Shift+c exec "~/bin/emojiArray | xclip -selection clipboard"
 bindsym --release $mod+Shift+t exec "~/bin/toggleScreen"
-bindsym $mod+u exec "rofi -show emoji -modi emoji" 
+bindsym $mod+u exec "rofimoji"
 
-bindsym $mod+F1 exec --no-startup-id firefox
+bindsym $mod+F1 exec --no-startup-id vivaldi-stable
 bindsym $mod+Shift+F1 exec --no-startup-id qutebrowser
 bindsym $mod+F2 exec --no-startup-id agenda
-bindsym $mod+F3 exec --no-startup-id subl
+bindsym $mod+F3 exec --no-startup-id code
 bindsym $mod+F4 exec --no-startup-id spotify
 bindsym $mod+F5 exec --no-startup-id google-chrome-stable
 bindsym $mod+Shift+F5 exec --no-startup-id surf google.com
@@ -167,30 +167,36 @@ bindsym $mod+minus scratchpad show
 
 # Terminal scratchpad
 exec --no-startup-id termite --role scratchpad
-for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 1200 480, move position center, move scratchpad
+for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 1199 482, move position center, move scratchpad
+
+# Terminal Vim
+exec --no-startup-id termite --role vim --exec 'nvim'
+for_window [class="Termite" window_role="vim"] move to workspace $workspace3
 
 # i3-gaps
 for_window [class="^.*"] border pixel 1
 
-gaps inner 10
-gaps outer 5
+gaps inner 0
+gaps outer 0
 
-smart_gaps on
+#smart_gaps on
 smart_borders on
 
-set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps Gaps: (o)uter, (i)nner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-bindsym $mod+Shift+g mode "$mode_gaps"
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global), (t)oggle
+bindsym $mod+Shift+g mode "$mode_gaps_inner"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
         bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
+        bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 
 mode "$mode_gaps_inner" {
+        bindsym t gaps inner current toggle 10
+
         bindsym plus  gaps inner current plus 5
         bindsym minus gaps inner current minus 5
         bindsym 0     gaps inner current set 0
@@ -199,7 +205,7 @@ mode "$mode_gaps_inner" {
         bindsym Shift+minus gaps inner all minus 5
         bindsym Shift+0     gaps inner all set 0
 
-        bindsym Return mode "default"
+        bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 mode "$mode_gaps_outer" {
@@ -211,11 +217,11 @@ mode "$mode_gaps_outer" {
         bindsym Shift+minus gaps outer all minus 5
         bindsym Shift+0     gaps outer all set 0
 
-        bindsym Return mode "default"
+        bindsym Return mode "$mode_gaps"
         bindsym Escape mode "default"
 }
 
-
+workspace $workspace3 gaps inner 15
 #
 
 
@@ -227,12 +233,12 @@ for_window [class="Google-chrome"] border none
 assign [class="Libreoffice"] $workspace2
 assign [class="Gnumeric"] $workspace2
 assign [class="Sublime_text"] $workspace3
+assign [class="Code"] $workspace3
 assign [class="GitKraken"] $workspace8
 for_window [class="Spotify"] move to workspace $workspace4
 for_window [class="discord"] move to workspace $workspace6
 for_window [class="XTerm"] floating enable, resize set 640 480, move position center, border none
 for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none
-for_window [class="TelegramDesktop"] move to workspace $workspace6, border none
 for_window [class="Tilda"] floating enable, border none
 assign [class="dosbox"] $workspace7
 assign [class="Eclipse"] $workspace3
@@ -247,6 +253,7 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id nm-applet
 exec --no-startup-id numlockx on
 exec --no-startup-id caffeine #Caffeine-ng
+exec --no-startup-id redshift-gtk
 
 exec_always --no-startup-id "compton --config ~/.config/compton.conf"
 
@@ -386,12 +393,12 @@ for_window [class="mpv"] floating enable,resize set 854 480,move position center
 
 # Folder Shorcuts Mode
 
-set $mode_folders Open Folder:(1) Pictures,(2) Downloads,(3) UTN,(4) Desktop,(5) Dropbox,(6) Music,(7) Documents,(8) Videos
+set $mode_folders Open Folder:(1) Pictures,(2) Downloads,(3) UTN,(4) Inversiones,(5) Dropbox,(6) Music,(7) Documents,(8) Videos
 
 #(1) Pictures,
 #(2) Downloads,
 #(3) UTN,
-#(4) Desktop,
+#(4) Inversiones,
 #(5) Dropbox,
 #(6) Music,
 #(7) Documents,
@@ -401,32 +408,15 @@ set $mode_folders Open Folder:(1) Pictures,(2) Downloads,(3) UTN,(4) Desktop,(5)
 bindsym $mod+Shift+m mode "$mode_folders"
 
 mode "$mode_folders" {
-        bindsym 2      exec thunar ~/Downloads  ; mode "default"
         bindsym 1      exec thunar ~/Pictures   ; mode "default"
-        bindsym 3      exec thunar ~/UTN    ; mode "default"
-        bindsym 4      exec thunar ~/Desktop    ; mode "default"
+        bindsym 2      exec thunar ~/Downloads  ; mode "default"
+        bindsym 3      exec thunar ~/UTN        ; mode "default"
+        bindsym 4      exec thunar ~/Inversiones; mode "default"
         bindsym 5      exec thunar ~/Dropbox    ; mode "default"
-        bindsym 6      exec thunar ~/Music  ; mode "default"
+        bindsym 6      exec thunar ~/Music      ; mode "default"
         bindsym 7      exec thunar ~/Documents  ; mode "default"
-        bindsym 8      exec thunar ~/Videos ; mode "default"
+        bindsym 8      exec thunar ~/Videos     ; mode "default"
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
-}
-
-
-# Launch mode, one app per key.
-set $mode_launch Launch:(A)tom,(E)clipse,(D)iscord,(T)elegram,(G)itkraken,(V)irtualBox
-bindsym $mod+Shift+d mode "$mode_launch"
-
-mode "$mode_launch" {
-    bindsym a exec --no-startup-id atom
-    bindsym e exec --no-startup-id eclipse
-    bindsym d exec --no-startup-id discord
-    bindsym t exec --no-startup-id telegram-desktop
-    bindsym g exec --no-startup-id gitkraken
-    bindsym v exec --no-startup-id VirtualBox
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
 }
