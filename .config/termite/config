@@ -38,53 +38,45 @@ scrollback_lines = 10000
 #scrollbar = off
 
 [colors]
-# Base16 Material Darker 
-# Author: Nate Peterson
+#Generated with http://terminal.sexy
 
-foreground          = #eeffff
-foreground_bold     = #eeffff
-cursor              = #eeffff
-cursor_foreground   = #212121
-background          = rgba(18, 28, 33, 0.95)
-# 16 color space
+# special
+foreground      = #eeffff
+foreground_bold = #eeffff
+cursor          = #eeffff
+background      = #292d3e
 
-# Black, Gray, Silver, White
-color0  = #212121
-color8  = #4a4a4a
-color7  = #eeffff
-color15 = #ffffff
+# black
+color0  = #202331
+color8  = #697098
 
-# Red
-color1  = #3E4970
-color9  = #3E4970
+# red
+color1  = #de5775
+color9  = #f0696f
 
-# Green
-color2  = #F0696F
-color10 = #F0696F
+# green
+color2  = #98c379
+color10 = #c3e88d
 
-# Yellow
-color3  = #ffcb6b
+# yellow
+color3  = #ee9966
 color11 = #ffcb6b
 
-# Blue
-color4  = #82aaff
+# blue
+color4  = #3e4970
 color12 = #82aaff
 
-# Purple
-color5  = #c792ea
+# magenta
+color5  = #c678dd
 color13 = #c792ea
 
-# Teal
+# cyan
 color6  = #89ddff
 color14 = #89ddff
 
-# Extra colors
-color16 = #f78c6c
-color17 = #212121
-color18 = #303030
-color19 = #353535
-color20 = #b2ccd6
-color21 = #eeffff
+# white
+color7  = #eeffff
+color15 = #ffffff
 
 
 [hints]

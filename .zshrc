@@ -39,11 +39,9 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs status vcs)
 
 # Dir
 # POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{black} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{white}"
-POWERLEVEL9K_DIR_HOME_BACKGROUND='001'
 POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='001'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND='yellow'
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND='011'  # yellow
 
 # Final spaces to fix glyphs
 POWERLEVEL9K_HOME_ICON='\uF015 '
@@ -64,7 +62,7 @@ POWERLEVEL9K_STATUS_OK='false'
 
 # Custom rainbow user@host
 rainbow(){
-    echo -n "%F{002}\uf004  %F{magenta}[%F{yellow}$USER%F{green}@%F{blue}$HOST%F{magenta}]"
+    echo -n "%F{red}\uf004  %F{magenta}[%F{011}$USER%F{red}@%F{012}$HOST%F{magenta}]"
 }
 POWERLEVEL9K_CUSTOM_RAINBOW="rainbow"
 POWERLEVEL9K_CUSTOM_RAINBOW_BACKGROUND="black"
@@ -203,8 +201,8 @@ prompt_context() {}
 
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
-#POWERLINE_BASH_SELECT=1
 
+#POWERLINE_BASH_SELECT=1
 if [ IS_TTY ]; then
     export PS1='%B%F{red}[%F{yellow}%n%F{green}@%F{blue}%m %F{magenta}%~%F{red}]%b%f%# '
 fi
