@@ -11,8 +11,6 @@
 !.config/dunst/
 !.config/dunst/*
 
-!.config/gtk-3.0/gtk.css
-
 !.config/i3/
 !.config/i3/*
 
@@ -39,16 +37,12 @@
 !.config/rofi/
 !.config/rofi/config.rasi
 
-!.fonts/
-!.fonts/*
-
 !.screenshots/
 !.screenshots/*
 
 
 !.gitignore
 !packages.txt
-!.profile
 !.vimrc
 !.Xresources
 !.zshrc
