@@ -32,7 +32,8 @@
 !.config/gsimplecal/
 !.config/gsimplecal/config
 
-!.config/compton.conf
+!.config/picom/
+!.config/picom/picom.conf
 
 !.config/rofi/
 !.config/rofi/config.rasi
