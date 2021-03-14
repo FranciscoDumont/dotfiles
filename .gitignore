@@ -38,6 +38,9 @@
 !.config/rofi/
 !.config/rofi/config.rasi
 
+!.config/autorandr/
+!.config/autorandr/**
+
 !.screenshots/
 !.screenshots/*
 

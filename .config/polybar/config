@@ -1,11 +1,20 @@
-;=====================================================
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
 ;
 ;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
+;   go to https://github.com/polybar/polybar
 ;
-;   The README contains alot of information
+;   The README contains a lot of information
 ;
-;=====================================================
+;==========================================================
 
 [colors]
 foreground = #aaafb2
@@ -23,9 +32,11 @@ yellow = #ee9966
 lightBlue = #233640
 dark = #0A0F12
 
+
 [global/wm]
 margin-top = 5
 margin-bottom = 5
+
 
 [bar/example]
 monitor = ${env:MONITOR:}
@@ -34,7 +45,6 @@ height = 27
 offset-x = 0
 offset-y = 0
 
-;background = ${xrdb:color9}
 background = ${colors.background}
 foreground = ${colors.foreground}
 
@@ -51,8 +61,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-#font-0 = "Overpass Regular:pixelsize=8.5;1"
-font-0 = scientifica
+font-0 = scientifica:size=8
 font-1 = FontAwesome:size=11;2
 font-2 = "Wuncon Siji:pixelsize=10;1"
 font-3 = dejavusans:pixelsize=10;1
@@ -60,81 +69,23 @@ font-4 = FontAwesome:size=11;1
 font-5 = "EmojiOne:pixelsize=16:style=Regular:scale=11;1"
 font-6 = Symbola:size=11;2
 
-;font-0 = NotoSans-Regular:size=8;0
-;font-1 = unifont:size=6;-3
-;font-2 = FontAwesome:size=8;-2
-;font-3 = NotoSans-Regular:size=8;-1
-;font-4 = MaterialIcons:size=10;-1
-;font-5 = Termsynu:size=8:antialias=false;0
-
 modules-left = i3 xwindow
-modules-center = music battery
-modules-right = xbacklight volume cpu date date2 powermenu
+modules-center = music
+modules-right = volume backlight cpu date date2 powermenu
 
 tray-position = right
 tray-detached = false
-;tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
-
-;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
 bottom = true
 
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
 
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-label-layout = %{F#55}%{F-} %layout%
-label-layout-underline = ${colors.secondary}
-label-indicator-padding = 2
-label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-mount-1 = /home
-mount-2 = /invalid/mountpoint
-
-label-mounted = %mountpoint%: %percentage_free%%
-
-label-unmounted = %mountpoint%: not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -143,7 +94,6 @@ index-sort = true
 wrapping-scroll = false
 strip-wsnumbers = true
 pin-workspaces = true
-
 
 ws-icon-0 = 1;
 ws-icon-1 = 2;
@@ -208,32 +158,10 @@ label-urgent-padding = 3
 label-urgent-font = 2
 
 
-
-[module/mpd]
-type = internal/mpd
-
-format-online = <label-song>  <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>
-
-label-song-maxlen = 25
-label-song-ellipsis = true
-
-icon-prev = 
-icon-seekb = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-icon-seekf = 
-
-icon-random = 
-icon-repeat = 
-
-toggle-on-foreground = ${colors.primary}
-toggle-off-foreground = #66
-
 [module/xbacklight]
 
 type = internal/xbacklight
+enable-scroll = true
 
 ;format-prefix = " "
 format = <ramp> <label> <bar>
@@ -257,10 +185,15 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
-[module/backlight-acpi]
+[module/backlight]
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
+format = <ramp> <label>
+label = %percentage%%
+ramp-foreground = ${colors.foreground-alt}
+format-underline = #ee9966
+
 
 [module/cpu]
 type = internal/cpu
@@ -270,47 +203,6 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage%%
 
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
-
-[module/wlan]
-type = internal/network
-interface = wlan1
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-format-disconnected-underline = ${self.format-connected-underline}
-
-label-connected = %essid%
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interface = eth0
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-foreground-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected-underline = ${self.format-connected-underline}
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -328,6 +220,7 @@ format-underline = #9f78e1
 
 label = %date%
 
+
 [module/date2]
 type = internal/date
 interval = 5
@@ -343,6 +236,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
 label = %time%
+
 
 [module/volume]
 type = internal/pulseaudio
@@ -393,9 +287,10 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+
 [module/battery]
 type = internal/battery
-battery = BAT1
+battery = BAT0
 adapter = ADP1
 full-at = 90
 label-full =
@@ -429,24 +324,6 @@ animation-charging-4 = 
 ; Framerate in milliseconds
 animation-charging-framerate = 750
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -466,21 +343,14 @@ menu-0-1 = power off
 menu-0-1-exec = menu-open-2
 menu-0-2 = suspend
 menu-0-2-exec = systemctl suspend
+menu-0-3 = tray
+menu-0-3-exec = ~/bin/toggleTray
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
+menu-1-0 = reboot
+menu-1-0-exec = systemctl reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
-
-;I've changed /etc/sudoers with $visudo adding:
-;<myUserName> ALL=(ALL)NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
-
-; vim:ft=dosini
+menu-2-0-exec = systemctl poweroff
 
 
 [module/music]
@@ -494,4 +364,4 @@ click-left = playerctl previous
 click-middle = playerctl play-pause
 click-right = playerctl next
 
-;label-font = 2
+; vim:ft=dosini
