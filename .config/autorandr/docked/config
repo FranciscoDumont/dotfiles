@@ -10,14 +10,16 @@ output DP-2-1
 off
 output DP-2-2
 off
-output eDP-1
-crtc 0
-mode 1366x768
-pos 0x0
-primary
-rate 60.06
 output DP-2-3
 crtc 1
+gamma 0.769:0.769:0.714
 mode 1360x768
-pos 1366x0
+pos 0x0
 rate 60.02
+output eDP-1
+crtc 0
+gamma 0.769:0.769:0.714
+mode 1366x768
+pos 1360x0
+primary
+rate 60.06

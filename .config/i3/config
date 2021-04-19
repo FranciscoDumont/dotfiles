@@ -139,7 +139,7 @@ bindsym $mod+Tab workspace back_and_forth
 # Moving workspaces between screens
 bindsym $mod+p move workspace to output right
 bindsym $mod+Shift+p exec "~/bin/pantalla"
-workspace $workspace5 output DP-2-3
+workspace $workspace5 output eDP-1
 exec --no-startup-id dockd --daemon
 
 #bindsym
@@ -154,7 +154,7 @@ bindsym $mod+u          exec "rofimoji"
 
 bindsym $mod+F1         exec --no-startup-id vivaldi-stable
 bindsym $mod+Shift+F1   exec --no-startup-id qutebrowser
-bindsym $mod+F2         exec --no-startup-id agenda
+bindsym $mod+F2         exec --no-startup-id anki
 bindsym $mod+F3         exec --no-startup-id phpstorm
 bindsym $mod+F4         exec --no-startup-id spotify
 bindsym $mod+F5         exec --no-startup-id gtk-launch WhatsApp.desktop
@@ -237,6 +237,8 @@ for_window [class="XTerm"] floating enable, resize set 640 480, move position ce
 for_window [class="feh"] floating enable, resize set 640 480, move position mouse, border none
 for_window [class="Tilda"] floating enable, border none
 for_window [class="Anki"] floating enable
+for_window [class="Anki" title="User.*"] floating disable
+for_window [class="Anki" title="Browse.*"] floating enable border normal
 for_window [class="(?i)firefox" window_role="GtkFileChooserDialog"] resize set 1200 480, move position center
 # for_window [class="^Steam"] floating enable
 for_window [class="^Steam" title="Friends List"] floating enable
@@ -254,6 +256,7 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id optimus-manager-qt
 
 exec_always --no-startup-id picom
+exec_always --no-startup-id autorandr --change
 
 #background             alpha.wallhaven.cc/
 exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg --bg-fill $HOME/.config/i3/wallpaper_1.jpg

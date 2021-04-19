@@ -179,6 +179,7 @@ alias bc="bc -l"
 alias gs="git status"
 alias ga="git add --patch"
 alias patri="mpv --script=~/.config/mpv/scripts/mpris.so --no-vid --shuffle Music/Patricio\ Rey"
+alias pat="php artisan tinker"
 
 cheat(){~/bin/cht.sh "$@" | less}
 
