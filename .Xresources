@@ -36,6 +36,7 @@
 *.foreground:   white0
 *.background:   black2
 *.cursorColor:  white0
+Xcursor.theme: capitaine-cursors-light
 *fading: 0
 *fadeColor:     black1
 
@@ -70,3 +71,5 @@
 ! white
 *.color7:       white0
 *.color15:      white1
+
+Xft.dpi: 96

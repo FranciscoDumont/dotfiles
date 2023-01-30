@@ -104,7 +104,7 @@ typeset -g POWERLEVEL9K_VCS_DISABLED_WORKDIR_PATTERN='~'
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -180,6 +180,8 @@ alias gs="git status"
 alias ga="git add --patch"
 alias patri="mpv --script=~/.config/mpv/scripts/mpris.so --no-vid --shuffle Music/Patricio\ Rey"
 alias pat="php artisan tinker"
+alias p="ping google.com"
+alias teke="cd ~/Repos/teke-bot ; python teke-bot.py"
 
 cheat(){~/bin/cht.sh "$@" | less}
 
@@ -223,3 +225,5 @@ fi
 export FZF_DEFAULT_COMMAND='ag --depth 3 --hidden --ignore .git -U -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #zprof
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

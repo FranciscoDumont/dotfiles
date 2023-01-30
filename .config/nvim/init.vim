@@ -97,6 +97,7 @@ set mouse=a                " Enable mouse for scrolling and resizing
 set autochdir              " Automatically change the current directory
 set clipboard=unnamedplus  " Use the clipboard as the default register
 set foldmethod=marker      " Activate folding using three curly braces
+set scrolloff=5            " Show a few lines of context around the cursor.
 
 
 " =^..^=   =^..^=   =^..^=    Color scheme    =^..^=    =^..^=    =^..^=
@@ -109,6 +110,12 @@ let g:palenight_terminal_italics=1
 
 " =^..^=   =^..^=   =^..^=    Maps    =^..^=    =^..^=    =^..^=
 let mapleader =" "
+
+" jj to escape
+imap jj <Esc>
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
 
 " Leader + p: Run FZF
 function! FZFGit()

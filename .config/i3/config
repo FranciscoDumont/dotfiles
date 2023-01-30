@@ -29,7 +29,7 @@ floating_modifier $mod
 
 # start a terminal
 #bindsym $mod+Return exec $term
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+Return exec xterm -e ranger $HOME/Pictures/Wallpapers
 
 # kill focused window
@@ -139,7 +139,6 @@ bindsym $mod+Tab workspace back_and_forth
 # Moving workspaces between screens
 bindsym $mod+p move workspace to output right
 bindsym $mod+Shift+p exec "~/bin/pantalla"
-workspace $workspace5 output eDP-1
 exec --no-startup-id dockd --daemon
 
 #bindsym
@@ -157,10 +156,9 @@ bindsym $mod+Shift+F1   exec --no-startup-id qutebrowser
 bindsym $mod+F2         exec --no-startup-id anki
 bindsym $mod+F3         exec --no-startup-id phpstorm
 bindsym $mod+F4         exec --no-startup-id spotify
-bindsym $mod+F5         exec --no-startup-id gtk-launch WhatsApp.desktop
 bindsym $mod+Shift+F5   exec --no-startup-id surf google.com
 bindsym $mod+F6         exec --no-startup-id discord
-bindsym $mod+F7         exec --no-startup-id steam-native
+bindsym $mod+F7         exec --no-startup-id telegram-desktop
 bindsym $mod+F8         exec --no-startup-id gitkraken
 
 # Make the currently focused window a scratchpad
@@ -169,8 +167,9 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Terminal scratchpad
-exec --no-startup-id termite --role scratchpad
-for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 1199 482, move position center, move scratchpad
+exec --no-startup-id alacritty --class scratchpad-term
+for_window [class="scratchpad-term"] floating enable,resize set 1199 482, move position center, move scratchpad
+# for_window [class="Termite" window_role="scratchpad"] floating enable,resize set 1199 482, move position center, move scratchpad
 
 
 # i3-gaps
@@ -239,24 +238,26 @@ for_window [class="Tilda"] floating enable, border none
 for_window [class="Anki"] floating enable
 for_window [class="Anki" title="User.*"] floating disable
 for_window [class="Anki" title="Browse.*"] floating enable border normal
-for_window [class="(?i)firefox" window_role="GtkFileChooserDialog"] resize set 1200 480, move position center
+for_window [window_role="GtkFileChooserDialog"] resize set 1200 480, move position center
 # for_window [class="^Steam"] floating enable
 for_window [class="^Steam" title="Friends List"] floating enable
 for_window [class="^Steam" title="Steam - News"] floating enable
 for_window [title="win0"] floating enable
+for_window [class="(?i)google-chrome" title="DevTools.*"] floating enable
+assign [class="(?i)jetbrains.*"] $workspace3
 
 #exec --no-startup-id firefox
 exec --no-startup-id dropbox start
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
 exec --no-startup-id nm-applet
 exec --no-startup-id numlockx on
 exec --no-startup-id caffeine
-exec --no-startup-id redshift-gtk
+# exec --no-startup-id redshift-gtk
 exec --no-startup-id optimus-manager-qt
 
 exec_always --no-startup-id picom
-exec_always --no-startup-id autorandr --change
 
 #background             alpha.wallhaven.cc/
 exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper.jpg --bg-fill $HOME/.config/i3/wallpaper_1.jpg
@@ -359,6 +360,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset 'Master' 5%+  # in
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+
+# Touchpad controls
+bindsym XF86TouchpadToggle exec "~/bin/toggleTouchpad.sh" # toggle touchpad
+bindsym XF86TouchpadOn exec "~/bin/toggleTouchpad.sh" # toggle touchpad
+bindsym XF86TouchpadOff exec "~/bin/toggleTouchpad.sh" # toggle touchpad
 
 # Change TrackPoint sensitivity
 exec --no-startup-id sleep 5; echo -n 140 > /sys/devices/platform/i8042/serio1/serio2/sensitivity

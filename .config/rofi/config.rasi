@@ -23,3 +23,5 @@ configuration {
 element-icon {
     size:             2.0em ;
 }
+
+@theme "purple"
