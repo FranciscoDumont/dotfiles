@@ -164,7 +164,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias top="vtop"
 alias oldtop="/usr/bin/top"
-alias yt2mp3="youtube-dl --extract-audio --audio-format mp3 --output '%(title)s.%(ext)s'"
+alias yt2mp3="yt-dlp --extract-audio --audio-format mp3 --output '%(title)s.%(ext)s'"
 alias black="xbacklight -steps 300 -time 2000 -set 0"
 alias radio="mpv --ytdl-format=\"[height<360]\" --no-video https://www.youtube.com/watch\?v\=hHW1oY26kxQ"
 alias brown="mpv --no-video https://youtu.be/hXetO_bYcMo"

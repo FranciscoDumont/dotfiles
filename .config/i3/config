@@ -160,6 +160,7 @@ bindsym $mod+Shift+F5   exec --no-startup-id surf google.com
 bindsym $mod+F6         exec --no-startup-id discord
 bindsym $mod+F7         exec --no-startup-id telegram-desktop
 bindsym $mod+F8         exec --no-startup-id gitkraken
+bindsym $mod+F10        exec --no-startup-id obsidian
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad

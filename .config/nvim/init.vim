@@ -2,8 +2,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -11,17 +9,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
 Plug 'mhinz/vim-startify'
-Plug 'junegunn/goyo.vim'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'matze/vim-move'
-Plug 'vim-syntastic/syntastic'
-Plug 'nvie/vim-flake8'
 Plug 'preservim/nerdcommenter'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vimwiki/vimwiki'
-Plug 'jiangmiao/auto-pairs'
 Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
@@ -46,7 +40,7 @@ map <F2> :NERDTreeToggle<CR>
 let g:webdevicons_conceal_nerdtree_brackets = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
 
-" Neerd Commenter
+" Nerd Commenter
 let g:NERDSpaceDelims = 1
 " <leader>c<space> to togle comments
 
@@ -117,20 +111,6 @@ imap jj <Esc>
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
-" Leader + p: Run FZF
-function! FZFGit()
-    let directory = substitute(system('git rev-parse --show-toplevel'), '\n$', '', '')
-    call fzf#run({'sink':'tabedit', 'dir':directory, 'window':{'width': 0.9, 'height': 0.6}})
-endfunction
-map <leader>p :map <lt>leader>p<CR>
-map <leader>pp :BTags<CR>
-map <leader>pP :Tags<CR>
-map <leader>pf :call FZFGit()<CR>
-map <leader>pg :GFiles<CR>
-map <leader>ph :History<CR>
-map <leader>pb :Buffers<CR>
-map <leader>pa :Ag <C-R><C-W><CR>
-
 " Leader + g GitGutter
 map <leader>g :map <lt>leader>g<CR>
 map <leader>gg :Git<CR><C-W>L<C-W>40<
@@ -150,9 +130,6 @@ map <leader>S :Startify<CR>
 " Leader + r: Replace each occurrence of the word under the cursor.
 map <leader>r :%s/<c-r><c-w>//gc<left><left><left>
 
-" Leader + G: Run Goyo
-map <leader>G :Goyo<CR>
-
 " Leader + b/p/n Buffers
 nnoremap <leader>b :buffers<CR>:buffer<Space>
 nnoremap <leader>N :bprevious<CR>
@@ -168,13 +145,6 @@ endif
 
 " Clear highlight on pressing ESC
 nnoremap <silent> <esc> :noh<return><esc>
-
-" Search in Google on pressing <F6>
-function! GoogleSearch()
-     let searchterm = getreg("g")
-     silent! exec "silent! !firefox \"http://google.com/search?q=" . searchterm . "\" &"
-endfunction
-vnoremap <F6> "gy<Esc>:call GoogleSearch()<CR>
 
 " Colorizer
 lua require'colorizer'.setup()

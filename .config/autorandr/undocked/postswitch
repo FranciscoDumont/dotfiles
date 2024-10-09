@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sleep 1
+i3-msg restart
+
+xinput enable "SynPS/2 Synaptics TouchPad"

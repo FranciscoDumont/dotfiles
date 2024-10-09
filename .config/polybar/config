@@ -70,7 +70,7 @@ font-5 = "EmojiOne:pixelsize=16:style=Regular:scale=11;1"
 font-6 = Symbola:size=11;2
 
 modules-left = i3 xwindow
-modules-center = music
+modules-center = music battery
 modules-right = volume backlight cpu date date2 powermenu
 
 tray-position = right
