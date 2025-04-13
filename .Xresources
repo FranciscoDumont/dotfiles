@@ -1,75 +1,43 @@
-#define black0    #202331
-#define black1    #697098
-#define black2    #292D3E
-#define black3    #212121
-#define black4    #111a1f
-
-
-#define red0      #DE5775
-#define red1      #f0696f
-
-
-#define green0    #98c379
-#define green1    #C3E88D
-
-
-#define yellow0   #ee9966
-#define yellow1   #ffcb6b
-
-
-#define blue0     #3e4970
-#define blue1     #82aaff
-
-
-#define magenta0  #C678DD
-#define magenta1  #c792ea
-
-
-#define cyan0     #89ddff
-#define cyan1     #89ddff
-
-
-#define white0    #eeffff
-#define white1    #ffffff
-
-! special
-*.foreground:   white0
-*.background:   black2
-*.cursorColor:  white0
-Xcursor.theme: capitaine-cursors-light
-*fading: 0
-*fadeColor:     black1
+*background: #24273a
+*foreground: #cad3f5
+*cursorColor: #f4dbd6
 
 ! black
-*.color0:       black0
-*.color8:       black1
+*color0: #494d64
+*color8: #5b6078
 
 ! red
-*.color1:       red0
-*.color9:       red1
+*color1: #ed8796
+*color9: #ed8796
 
 ! green
-*.color2:       green0
-*.color10:      green1
+*color2: #a6da95
+*color10: #a6da95
 
 ! yellow
-*.color3:       yellow0
-*.color11:      yellow1
+*color3: #eed49f
+*color11: #eed49f
 
 ! blue
-*.color4:       blue0
-*.color12:      blue1
+*color4: #8aadf4
+*color12: #8aadf4
 
 ! magenta
-*.color5:       magenta0
-*.color13:      magenta1
+*color5: #f5bde6
+*color13: #f5bde6
 
 ! cyan
-*.color6:       cyan0
-*.color14:      cyan1
+*color6: #8bd5ca
+*color14: #8bd5ca
 
 ! white
-*.color7:       white0
-*.color15:      white1
+*color7: #b8c0e0
+*color15: #a5adcb
 
 Xft.dpi: 96
+
+! special
+Xcursor.theme: capitaine-cursors-light
+
+! Font
+XTerm.vt100.faceName: JetBrainsMono Nerd Font Mono:size=10:antialias=true

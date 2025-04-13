@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'airblade/vim-gitgutter'
@@ -13,10 +12,13 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'matze/vim-move'
 Plug 'preservim/nerdcommenter'
-Plug 'drewtempelmeyer/palenight.vim'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'vimwiki/vimwiki'
 Plug 'norcalli/nvim-colorizer.lua'
+Plug 'github/copilot.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
@@ -48,16 +50,13 @@ let g:NERDSpaceDelims = 1
 let g:tagbar_autofocus = 1
 map <F3> :TagbarToggle<CR>
 
-" Deoplete
-set updatetime=100
-let g:deoplete#enable_at_startup = 1
-
 " Gutentags
 set statusline+=%{gutentags#statusline()}
 
 " VimWiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki'}]
 let g:vimwiki_folding = 'custom'
+let g:vimwiki_key_mappings = { 'table_mappings': 0 } " El Tab choca con copilot
 
 " Startify
 let g:startify_fortune_use_unicode = 1
@@ -97,9 +96,8 @@ set scrolloff=5            " Show a few lines of context around the cursor.
 " =^..^=   =^..^=   =^..^=    Color scheme    =^..^=    =^..^=    =^..^=
 set termguicolors
 set background=dark
-colorscheme palenight
-let g:airline_theme='palenight'
-let g:palenight_terminal_italics=1
+colorscheme catppuccin-macchiato
+let g:airline_theme='catppuccin'
 
 
 " =^..^=   =^..^=   =^..^=    Maps    =^..^=    =^..^=    =^..^=

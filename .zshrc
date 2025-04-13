@@ -41,7 +41,9 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs status vcs)
 # POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{black} $(print_icon 'LEFT_SUBSEGMENT_SEPARATOR') %F{white}"
 POWERLEVEL9K_DIR_HOME_FOREGROUND='white'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='white'
-POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND='011'  # yellow
+POWERLEVEL9K_DIR_PATH_HIGHLIGHT_FOREGROUND='yellow'
+POWERLEVEL9K_DIR_HOME_BACKGROUND='008'
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='008'
 
 # Final spaces to fix glyphs
 POWERLEVEL9K_HOME_ICON='\uF015 '
@@ -178,7 +180,7 @@ alias wttr="curl wttr.in/Buenos_Aires\?lang=es"
 alias bc="bc -l"
 alias gs="git status"
 alias ga="git add --patch"
-alias patri="mpv --script=~/.config/mpv/scripts/mpris.so --no-vid --shuffle Music/Patricio\ Rey"
+alias patri="mpv --no-vid --shuffle Music/Albumes/Patricio\ Rey"
 alias pat="php artisan tinker"
 alias p="ping google.com"
 alias teke="cd ~/Repos/teke-bot ; python teke-bot.py"

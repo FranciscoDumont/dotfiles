@@ -179,8 +179,6 @@ for_window [class="^.*"] border pixel 1
 gaps inner 0
 gaps outer 0
 
-#smart_gaps on
-smart_borders on
 
 set $mode_gaps Gaps: (o)uter, (i)nner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -383,7 +381,7 @@ bindsym $mod+Shift+l exec "~/.config/i3/glitchlock"
 # Borders
 new_window pixel 1
 
-hide_edge_borders vertical
+hide_edge_borders smart
 
 bindsym $mod+b border toggle
 
