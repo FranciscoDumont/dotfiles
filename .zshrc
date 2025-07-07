@@ -229,3 +229,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 #zprof
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Para el Runtime de de PhpStorm
+export PHPSTORM_JDK=/home/panchi/.jbr/jbr_jcef-21.0.7-linux-x64-b895.13
+export PATH="/home/panchi/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/panchi/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"

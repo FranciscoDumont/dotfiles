@@ -246,7 +246,6 @@ for_window [class="(?i)google-chrome" title="DevTools.*"] floating enable
 assign [class="(?i)jetbrains.*"] $workspace3
 
 #exec --no-startup-id firefox
-exec --no-startup-id dropbox start
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd
